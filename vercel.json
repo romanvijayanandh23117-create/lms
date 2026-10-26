@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": ".",
+  "installCommand": "echo 'Static site - skipping npm install'",
+  "buildCommand": "echo 'Static site - ready'",
   "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/landing.html" },
