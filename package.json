@@ -4,7 +4,6 @@
   "description": "VJ Institute - Learn and Grow LMS",
   "main": "index.html",
   "scripts": {
-    "build": "echo Static site ready",
     "start": "node server.js",
     "dev": "node server.js"
   },
