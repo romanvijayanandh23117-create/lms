@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account | VJ Institute - Learn and Grow</title>
+  <meta name="description" content="Create your account at VJ Institute. Join a premier community of systems engineers and software architects mastering first principles.">
+  <link rel="icon" type="image/png" href="assets/images/vj-monogram.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+  <!-- Ambient Background Glows -->
+  <div class="auth-ambient-glow top-left"></div>
+  <div class="auth-ambient-glow bottom-right"></div>
+
+  <!-- Top Auth Header -->
+  <header class="auth-header">
+    <a href="landing.html" class="auth-brand-link" title="Return to VJ Institute Landing Page">
+      <img src="assets/images/vj-monogram.png" alt="VJ Monogram" class="auth-brand-logo">
+      <div class="auth-brand-text">
+        <span class="auth-brand-name">VJ INSTITUTE</span>
+        <span class="auth-brand-tagline">LEARN AND GROW</span>
+      </div>
+    </a>
+
+    <div class="auth-header-actions">
+      <!-- Dark/Light Theme Toggle -->
+      <button class="icon-button" id="theme-toggle-btn" title="Toggle Studio Light/Dark Theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+
+      <a href="landing.html" class="auth-back-btn" title="Return to Landing Page">
+        <span>← Home</span>
+      </a>
+      <a href="index.html" class="auth-back-btn" title="Open LMS Sanctuary">
+        <span>🏛️ Sanctuary LMS</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Auth Main Container -->
+  <main class="auth-main-wrapper">
+    <div class="auth-container">
+      
+      <!-- Left Column: Sanctuary Brand Showcase -->
+      <section class="auth-hero-showcase">
+        <div>
+          <div class="hero-pill-badge">
+            <span>🚀</span>
+            <span>Join the Fellowship</span>
+          </div>
+          
+          <h1 class="hero-main-title">
+            Accelerate your journey to <span class="hero-gradient-text">Staff Architect</span>.
+          </h1>
+
+          <p class="hero-lead-desc">
+            Build resilience against system failures, write lock-free algorithms, and earn credentials recognized by leading technology organizations.
+          </p>
+
+          <div class="hero-features-list">
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">🎯</div>
+              <div class="feature-text-block">
+                <h4>No Surface-Level Tutorials</h4>
+                <p>Every module is reverse-engineered from production outages and real high-concurrency architectures.</p>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">🛠️</div>
+              <div class="feature-text-block">
+                <h4>Live Code & Interactive Scratchpads</h4>
+                <p>Run code snippets, benchmark query plans, and take contextual notes tied directly to video timestamps.</p>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">📜</div>
+              <div class="feature-text-block">
+                <h4>Cryptographic Verification</h4>
+                <p>Sharable, tamper-proof certificates verifying your technical mastery and quiz scores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warrior Testimonial Box -->
+        <div class="hero-testimonial-box">
+          <img src="assets/images/vj-warrior.png" alt="VJ Warrior" class="hero-warrior-img">
+          <div>
+            <div class="testimonial-quote">
+              "We don't teach syntax. We teach you how distributed consensus really works under network partitions."
+            </div>
+            <div class="testimonial-author">
+              Arjun Mehta &bull; Staff Infrastructure Engineer
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Sign Up Form -->
+      <section class="auth-form-column">
+        <div class="auth-form-header">
+          <h2 class="auth-form-title">Create Your Account</h2>
+          <p class="auth-form-subtitle">Begin your engineering journey at VJ Institute</p>
+        </div>
+
+        <!-- Mode Switcher -->
+        <div class="auth-mode-switch">
+          <a href="login.html" class="mode-tab-btn">Sign In</a>
+          <a href="signup.html" class="mode-tab-btn active">Create Account</a>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div class="auth-alert-banner" id="auth-alert">
+          <span id="alert-icon">⚠️</span>
+          <span id="alert-text">Alert message goes here</span>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form" autocomplete="on">
+          <div class="auth-form-fields">
+            
+            <!-- Full Name -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-name">Full Name *</label>
+              <div class="input-with-icon">
+                <span class="field-icon">👤</span>
+                <input 
+                  type="text" 
+                  id="signup-name" 
+                  class="auth-text-input" 
+                  placeholder="e.g. Vijay Anand" 
+                  required 
+                  autocomplete="name"
+                  autofocus
+                >
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-email">Work or Academic Email *</label>
+              <div class="input-with-icon">
+                <span class="field-icon">✉️</span>
+                <input 
+                  type="email" 
+                  id="signup-email" 
+                  class="auth-text-input" 
+                  placeholder="e.g. engineer@vjinstitute.edu" 
+                  required 
+                  autocomplete="email"
+                >
+              </div>
+            </div>
+
+            <!-- Track Selector -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-track">Primary Focus Track</label>
+              <div class="input-with-icon">
+                <span class="field-icon">🧭</span>
+                <select id="signup-track" class="auth-select-input">
+                  <option value="Distributed Systems & Full-Stack Architecture" selected>Distributed Systems & Full-Stack Architecture</option>
+                  <option value="High-Performance Python & CPython Internals">High-Performance Python & CPython Internals</option>
+                  <option value="Modern Java 21 & Cloud Microservices">Modern Java 21 & Cloud Microservices</option>
+                  <option value="DevOps & Kubernetes Infrastructure">DevOps & Kubernetes Infrastructure</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Desired Role Selector -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-role">Sanctuary Role</label>
+              <div class="input-with-icon">
+                <span class="field-icon">🎓</span>
+                <select id="signup-role" class="auth-select-input">
+                  <option value="Principal Fellow" selected>Principal Fellow (Student / Engineer)</option>
+                  <option value="Senior Software Architect">Senior Software Architect</option>
+                  <option value="Staff Systems Engineer">Staff Systems Engineer</option>
+                  <option value="Guest Scholar">Guest Scholar</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-password">Master Password *</label>
+              <div class="input-with-icon">
+                <span class="field-icon">🔒</span>
+                <input 
+                  type="password" 
+                  id="signup-password" 
+                  class="auth-text-input" 
+                  placeholder="Minimum 6 characters" 
+                  required
+                  autocomplete="new-password"
+                >
+                <button type="button" class="password-toggle-btn" id="toggle-signup-password" title="Toggle password visibility">
+                  👁️
+                </button>
+              </div>
+              <!-- Real-time strength meter -->
+              <div class="password-strength-box">
+                <div class="strength-meter-bar">
+                  <div class="strength-meter-fill" id="strength-fill"></div>
+                </div>
+                <div class="strength-meta-text" id="strength-text">Password strength: Enter at least 6 characters</div>
+              </div>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="signup-confirm-password">Confirm Password *</label>
+              <div class="input-with-icon">
+                <span class="field-icon">🔒</span>
+                <input 
+                  type="password" 
+                  id="signup-confirm-password" 
+                  class="auth-text-input" 
+                  placeholder="Re-type your master password" 
+                  required
+                  autocomplete="new-password"
+                >
+              </div>
+            </div>
+
+            <!-- Terms & Honor Code -->
+            <label class="auth-checkbox-row">
+              <input type="checkbox" id="agree-terms" required checked>
+              <span>I agree to the VJ Institute Honor Code &amp; Academic Terms</span>
+            </label>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" id="btn-submit-signup">
+              <span>Create My Account &amp; Enter Sanctuary</span>
+              <span>🚀</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- SSO Options -->
+        <div class="auth-divider-line">
+          <span>Or Register With</span>
+        </div>
+
+        <div class="sso-buttons-row">
+          <button type="button" class="btn-sso" id="btn-sso-github">
+            <span class="sso-icon">🐙</span>
+            <span>GitHub</span>
+          </button>
+          <button type="button" class="btn-sso" id="btn-sso-google">
+            <span class="sso-icon">🌐</span>
+            <span>Google</span>
+          </button>
+        </div>
+
+        <!-- Bottom Switch Link -->
+        <div class="auth-bottom-switch">
+          Already have an account? 
+          <a href="login.html">Sign in here →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      const nameInput = document.getElementById('signup-name');
+      const emailInput = document.getElementById('signup-email');
+      const trackSelect = document.getElementById('signup-track');
+      const roleSelect = document.getElementById('signup-role');
+      const passInput = document.getElementById('signup-password');
+      const confirmPassInput = document.getElementById('signup-confirm-password');
+      const togglePassBtn = document.getElementById('toggle-signup-password');
+      const signupForm = document.getElementById('signup-form');
+      const strengthFill = document.getElementById('strength-fill');
+      const strengthText = document.getElementById('strength-text');
+      const alertBanner = document.getElementById('auth-alert');
+      const alertText = document.getElementById('alert-text');
+      const alertIcon = document.getElementById('alert-icon');
+      const submitBtn = document.getElementById('btn-submit-signup');
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+
+      // Theme toggle sync
+      function updateThemeIcon() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        themeIcon.textContent = current === 'dark' ? '🌙' : '☀️';
+      }
+      updateThemeIcon();
+
+      themeBtn.addEventListener('click', () => {
+        VJAuth.toggleTheme();
+        updateThemeIcon();
+      });
+
+      // Show/Hide password toggle
+      togglePassBtn.addEventListener('click', () => {
+        if (passInput.type === 'password') {
+          passInput.type = 'text';
+          togglePassBtn.textContent = '🔒';
+          togglePassBtn.title = 'Hide password';
+        } else {
+          passInput.type = 'password';
+          togglePassBtn.textContent = '👁️';
+          togglePassBtn.title = 'Show password';
+        }
+      });
+
+      // Password strength evaluator
+      passInput.addEventListener('input', () => {
+        const val = passInput.value;
+        let score = 0;
+        if (val.length >= 6) score += 1;
+        if (val.length >= 10) score += 1;
+        if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score += 1;
+        if (/[^A-Za-z0-9]/.test(val)) score += 1;
+
+        if (val.length === 0) {
+          strengthFill.style.width = '0%';
+          strengthFill.style.backgroundColor = 'transparent';
+          strengthText.textContent = 'Password strength: Enter at least 6 characters';
+          strengthText.style.color = 'var(--text-muted)';
+        } else if (val.length < 6) {
+          strengthFill.style.width = '25%';
+          strengthFill.style.backgroundColor = '#f43f5e';
+          strengthText.textContent = 'Too short (minimum 6 characters required)';
+          strengthText.style.color = '#f43f5e';
+        } else if (score <= 2) {
+          strengthFill.style.width = '50%';
+          strengthFill.style.backgroundColor = '#f59e0b';
+          strengthText.textContent = 'Fair (Add uppercase letters or numbers for better security)';
+          strengthText.style.color = '#f59e0b';
+        } else if (score === 3) {
+          strengthFill.style.width = '75%';
+          strengthFill.style.backgroundColor = '#06b6d4';
+          strengthText.textContent = 'Good (Strong master password)';
+          strengthText.style.color = '#06b6d4';
+        } else {
+          strengthFill.style.width = '100%';
+          strengthFill.style.backgroundColor = '#10b981';
+          strengthText.textContent = 'Rock Solid! Cryptographically resilient.';
+          strengthText.style.color = '#10b981';
+        }
+      });
+
+      // Notification helper
+      function showAlert(msg, isSuccess = false) {
+        alertBanner.className = 'auth-alert-banner ' + (isSuccess ? 'success' : 'error');
+        alertIcon.textContent = isSuccess ? '✅' : '⚠️';
+        alertText.textContent = msg;
+        alertBanner.style.display = 'flex';
+      }
+
+      function hideAlert() {
+        alertBanner.style.display = 'none';
+      }
+
+      // SSO Mock clicks
+      document.getElementById('btn-sso-github').addEventListener('click', () => {
+        nameInput.value = 'GitHub Architect';
+        emailInput.value = 'architect@github.community';
+        passInput.value = 'password123';
+        confirmPassInput.value = 'password123';
+        showAlert('Imported verified profile from GitHub. Click Create My Account to finalize.', true);
+      });
+
+      document.getElementById('btn-sso-google').addEventListener('click', () => {
+        nameInput.value = 'Google Scholar';
+        emailInput.value = 'scholar@vjinstitute.edu';
+        passInput.value = 'password123';
+        confirmPassInput.value = 'password123';
+        showAlert('Imported Google profile data. Click Create My Account to finalize.', true);
+      });
+
+      // Sign Up form submission
+      signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        hideAlert();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const track = trackSelect.value;
+        const role = roleSelect.value;
+        const pass = passInput.value;
+        const confirmPass = confirmPassInput.value;
+
+        if (pass !== confirmPass) {
+          showAlert('Passwords do not match. Please verify your password entry.', false);
+          confirmPassInput.focus();
+          return;
+        }
+
+        submitBtn.classList.add('loading');
+        submitBtn.innerHTML = `<span>Creating your credentials...</span> <span style="display:inline-block; animation:spin 1s linear infinite;">⏳</span>`;
+
+        setTimeout(() => {
+          const res = VJAuth.signup({
+            name,
+            email,
+            password: pass,
+            role,
+            track
+          });
+
+          if (!res.success) {
+            submitBtn.classList.remove('loading');
+            submitBtn.innerHTML = `<span>Create My Account &amp; Enter Sanctuary</span> <span>🚀</span>`;
+            showAlert(res.error, false);
+          } else {
+            showAlert(`Account created successfully! Welcome to VJ Institute, ${res.user.name}. Redirecting...`, true);
+            submitBtn.innerHTML = `<span>Welcome, ${res.user.name}!</span> <span>✓</span>`;
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 800);
+          }
+        }, 500);
+      });
+
+    })();
+  </script>
+</body>
+</html>

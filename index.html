@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VJ Institute - Learn and Grow | Advanced LMS</title>
+  <meta name="description" content="VJ Institute - Learn and Grow. A premier sanctuary for engineering excellence, system architecture, and professional masterclasses.">
+  <link rel="icon" type="image/png" href="assets/images/vj-monogram.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Navigation Sidebar -->
+    <aside class="sidebar">
+      <a href="landing.html" class="brand-wrapper" title="Return to Landing Page" style="text-decoration: none; color: inherit; cursor: pointer;">
+        <div class="brand-icon">
+          <img src="assets/images/vj-institute-logo.svg" alt="VJ Institute Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">VJ INSTITUTE</span>
+          <span class="brand-tagline">LEARN AND GROW</span>
+        </div>
+      </a>
+
+      <div class="nav-section-label">Sanctuary</div>
+      <ul class="nav-menu">
+        <li class="nav-item active" data-view="dashboard">
+          <button id="nav-btn-dashboard">
+            <span class="nav-icon">📊</span>
+            <span>Dashboard</span>
+          </button>
+        </li>
+        <li class="nav-item" data-view="player">
+          <button id="nav-btn-player">
+            <span class="nav-icon">▶️</span>
+            <span>Active Player</span>
+            <span class="nav-badge">Live</span>
+          </button>
+        </li>
+        <li class="nav-item" data-view="quizzes">
+          <button id="nav-btn-quizzes">
+            <span class="nav-icon">🎯</span>
+            <span>Assessments</span>
+          </button>
+        </li>
+        <li class="nav-item" data-view="certificates">
+          <button id="nav-btn-certificates">
+            <span class="nav-icon">📜</span>
+            <span>Certificates</span>
+          </button>
+        </li>
+        <li class="nav-item" data-view="catalog">
+          <button id="nav-btn-catalog">
+            <span class="nav-icon">🧭</span>
+            <span>Course Explorer</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Handcrafted Personal Daily Focus Box -->
+      <div class="personal-focus-box">
+        <div class="focus-label">
+          <span>🎯 Today's Goal</span>
+          <button class="focus-edit-btn" id="edit-focus-btn" title="Edit your daily goal">Edit</button>
+        </div>
+        <div class="focus-text" id="daily-focus-display">
+          "Master Redis XFetch probabilistic caching & test BullMQ queue idempotency."
+        </div>
+      </div>
+
+      <!-- Current User Profile Strip -->
+      <div class="user-profile-strip" id="profile-strip-btn">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="Vijay Anand" class="user-avatar" id="sidebar-avatar">
+        <div class="user-meta">
+          <div class="user-name" id="sidebar-user-name">Vijay Anand</div>
+          <div class="user-role-badge">Principal Fellow</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Application Canvas -->
+    <main class="main-wrapper">
+      <!-- Top Application Bar -->
+      <header class="top-header">
+        <div class="search-bar-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="global-search-input" class="search-input" placeholder="Search lessons, architecture notes, topics...">
+        </div>
+
+        <div class="header-actions">
+          <a href="landing.html" class="btn-secondary" style="padding: 7px 14px; font-size: 0.82rem; border-radius: var(--radius-full); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🌄 Landing</span>
+          </a>
+
+          <button class="btn-primary" id="btn-top-add-course" style="padding: 7px 15px; font-size: 0.82rem; border-radius: var(--radius-full);">
+            <span>➕ Add Course</span>
+          </button>
+
+          <div class="streak-pill" title="14 consecutive days of deep work">
+            <span>🔥</span>
+            <span id="streak-counter">14 Days Velocity</span>
+          </div>
+
+          <!-- Dark / Light Theme Toggle -->
+          <button class="icon-button" id="theme-toggle-btn" title="Toggle Studio Light/Dark Theme">
+            <span id="theme-icon">🌙</span>
+          </button>
+
+          <button class="icon-button" id="btn-quick-notes" title="Quick Notes">
+            <span>📝</span>
+          </button>
+
+          <!-- Authentication Quick Links / User State -->
+          <div class="auth-header-btn-wrap" id="header-auth-container" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="btn-secondary" id="btn-header-login" style="padding: 7px 14px; font-size: 0.82rem; border-radius: var(--radius-full); text-decoration:none;">
+              <span>🔑 Sign In</span>
+            </a>
+            <a href="signup.html" class="btn-primary" id="btn-header-signup" style="padding: 7px 15px; font-size: 0.82rem; border-radius: var(--radius-full); text-decoration:none;">
+              <span>✨ Sign Up</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Views Container -->
+      <div class="content-body">
+        
+        <!-- ================= VIEW 1: DASHBOARD ================= -->
+        <section id="dashboard-view" class="view-section active">
+          <!-- Personalized Welcome Banner -->
+          <div class="welcome-hero">
+            <div class="welcome-hero-content">
+              <div class="welcome-greeting-tag">
+                <span>👋 Welcome Back</span>
+                <span>&bull;</span>
+                <span>VJ Institute Sanctuary</span>
+              </div>
+              <h1 class="welcome-title">Ready to build, <span id="hero-user-name">Vijay</span>?</h1>
+              <p class="welcome-subtitle">
+                Welcome to <strong>VJ Institute &bull; Learn and Grow</strong>. You completed <strong>PostgreSQL WAL Tuning</strong> yesterday. Pick up right where you left off in <strong>Production Full-Stack Architecture</strong> or explore the new <strong>Java Mastery</strong> curriculum.
+              </p>
+              <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <span class="hero-stat-val" id="stat-hours">48.5h</span>
+                <span class="hero-stat-lbl">Deep Study</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val" id="stat-completed-lessons">3</span>
+                <span class="hero-stat-lbl">Lessons Mastered</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val" id="stat-certs-count">1</span>
+                <span class="hero-stat-lbl">Verified Credential</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-val">100%</span>
+                <span class="hero-stat-lbl">Average Quiz Score</span>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Personal Mentor Pro-Tip Box (Human Touch) -->
+          <div class="mentor-tip-banner">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Arjun Mehta" class="mentor-avatar-badge">
+            <div class="mentor-tip-content">
+              <h4>
+                <span>💡 Arjun's Architecture Advisory</span>
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">Just now</span>
+              </h4>
+              <p>
+                "When caching high-cardinality queries in Redis, remember that standard TTL stampedes will take down your primary replica if multiple workers miss simultaneously. Be sure to check lesson <strong>1.3 on Probabilistic Early Expiration (XFetch)</strong> before shipping your PR!"
+              </p>
+            </div>
+          </div>
+
+          <!-- Active Course Progress Section -->
+          <div class="section-header">
+            <h2 class="section-title">Continue Where You Left Off</h2>
+            <button class="section-action-btn" id="btn-view-all-courses">Browse All Courses &rarr;</button>
+          </div>
+
+          <div class="active-learning-grid" id="dashboard-courses-grid">
+            <!-- Dynamically populated via app.js -->
+          </div>
+
+          <!-- Earned Badges & Milestones -->
+          <div class="section-header">
+            <h2 class="section-title">Verified Badges & Craftsmanship Milestones</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:40px;" id="badges-container">
+            <!-- Populated via app.js -->
+          </div>
+        </section>
+
+        <!-- ================= VIEW 2: COURSE PLAYER & WORKSPACE ================= -->
+        <section id="player-view" class="view-section">
+          <div class="player-workspace">
+            <!-- Left: Video & Lesson Content Deck -->
+            <div class="player-main-col">
+              <!-- Simulated Interactive Player -->
+              <div class="video-theater" id="video-theater-elem">
+                <div class="video-screen-content" id="video-screen-layer">
+                  <div class="simulation-wave">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <h2 class="video-lesson-title" id="player-lesson-title">1.3 Multi-Layer Caching with Redis: Invalidation & Thundering Herd</h2>
+                  <div class="video-instructor-label" id="player-instructor-label">Instructor: Arjun Mehta &bull; Staff Infrastructure Architect</div>
+                  <button class="center-play-button" id="btn-center-play" title="Play / Pause Lesson">▶</button>
+                </div>
+
+                <!-- Custom Player Controls Deck -->
+                <div class="player-controls-deck">
+                  <div class="timeline-scrubber" id="timeline-scrubber">
+                    <div class="timeline-fill" id="timeline-fill" style="width: 25%;"></div>
+                  </div>
+                  <div class="controls-row">
+                    <div class="left-controls">
+                      <button class="ctrl-btn" id="btn-play-toggle">▶</button>
+                      <button class="ctrl-btn" id="btn-replay-10" title="Back 10s">↺ 10s</button>
+                      <button class="ctrl-btn" id="btn-forward-10" title="Forward 10s">↻ 10s</button>
+                      <span class="time-stamp" id="player-time-display">07:15 / 28:10</span>
+                    </div>
+                    <div class="right-controls">
+                      <select class="speed-selector" id="playback-speed-select">
+                        <option value="0.75">0.75x</option>
+                        <option value="1" selected>1.0x</option>
+                        <option value="1.25">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2">2.0x</option>
+                      </select>
+                      <button class="ctrl-btn" id="btn-volume-toggle" title="Mute/Unmute">🔊</button>
+                      <button class="ctrl-btn" id="btn-theater-toggle" title="Full Theater Mode">⛶</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lesson Content Tabs (Notes, Code, Scratchpad, Resources, Discussion) -->
+              <div class="lesson-workspace-tabs">
+                <div class="tab-nav-bar">
+                  <button class="tab-btn active" data-tab="tab-notes">Architecture Notes</button>
+                  <button class="tab-btn" data-tab="tab-code">Code Pattern</button>
+                  <button class="tab-btn" data-tab="tab-scratchpad">My Personal Notes ✍️</button>
+                  <button class="tab-btn" data-tab="tab-resources">Downloads & Diagrams</button>
+                  <button class="tab-btn" data-tab="tab-qa">Community Q&A</button>
+                </div>
+
+                <!-- Tab 1: Architecture Notes -->
+                <div class="tab-pane-content active" id="tab-notes">
+                  <div class="notes-container" id="lesson-notes-content">
+                    <!-- Populated dynamically -->
+                  </div>
+                </div>
+
+                <!-- Tab 2: Code Snippets -->
+                <div class="tab-pane-content" id="tab-code">
+                  <div class="code-block-wrapper">
+                    <div class="code-header">
+                      <span id="code-lang-tag">TypeScript / Node.js</span>
+                      <button class="copy-code-btn" id="btn-copy-code">Copy Snippet</button>
+                    </div>
+                    <pre class="code-pre"><code id="lesson-code-content"></code></pre>
+                  </div>
+                </div>
+
+                <!-- Tab 3: Personal Scratchpad (Autosaving) -->
+                <div class="tab-pane-content" id="tab-scratchpad">
+                  <div class="scratchpad-container">
+                    <div class="scratchpad-header">
+                      <span style="font-size:0.85rem; font-weight:600;">Personal Lesson Log & Insights</span>
+                      <span class="scratchpad-status" id="scratchpad-status">✓ Auto-saved to local memory</span>
+                    </div>
+                    <textarea class="scratchpad-textarea" id="student-scratchpad" placeholder="Type personal notes, debugging steps, questions, or ideas for this lesson... It saves automatically."></textarea>
+                  </div>
+                </div>
+
+                <!-- Tab 4: Resources -->
+                <div class="tab-pane-content" id="tab-resources">
+                  <div class="resources-list" id="resources-list-content">
+                    <!-- Populated dynamically -->
+                  </div>
+                </div>
+
+                <!-- Tab 5: Community Q&A -->
+                <div class="tab-pane-content" id="tab-qa">
+                  <div class="qa-thread-list" id="qa-thread-container">
+                    <div class="qa-item">
+                      <div class="qa-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Arjun Mehta" class="qa-avatar">
+                        <span class="qa-name">Arjun Mehta (Instructor)</span>
+                        <span class="qa-tag">Staff Architect</span>
+                      </div>
+                      <div class="qa-text">
+                        "Welcome to this lesson! If you're experimenting with XFetch in high-volume microservices, notice how the beta parameter controls the aggressiveness of early recomputation."
+                      </div>
+                    </div>
+                  </div>
+                  <div class="qa-reply-box">
+                    <input type="text" class="qa-reply-input" id="qa-input-msg" placeholder="Ask Arjun a specific question about this architecture...">
+                    <button class="btn-primary" id="btn-submit-qa">Ask Question</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Curriculum Playlist & Progress -->
+            <div class="curriculum-sidebar-box">
+              <div class="curriculum-header">
+                <div class="curriculum-title" id="curriculum-course-name">Production Full-Stack Architecture</div>
+                <div class="curriculum-sub" id="curriculum-progress-stat">2 of 5 lessons completed (40%)</div>
+              </div>
+
+              <div id="curriculum-modules-wrapper">
+                <!-- Dynamically rendered modules and lessons -->
+              </div>
+
+              <!-- Knowledge Assessment Quiz CTA -->
+              <div class="quiz-trigger-box">
+                <div class="quiz-trigger-title">Ready for Certification?</div>
+                <div class="quiz-trigger-desc">Test your understanding with real production architecture scenarios. Score 80%+ to unlock your verified credential.</div>
+                <button class="btn-primary" id="btn-launch-quiz-from-player" style="width:100%;">Take Course Assessment &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW 3: QUIZ & ASSESSMENT ENGINE ================= -->
+        <section id="quizzes-view" class="view-section">
+          <!-- Quiz Course Switcher -->
+          <div class="quiz-course-picker-row">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); display:flex; align-items:center; gap:6px;">
+              <span>🎯</span> Select Assessment:
+            </span>
+            <div id="quiz-course-pills" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <!-- Dynamic pills for each course -->
+            </div>
+          </div>
+
+          <div class="quiz-container-card">
+            <!-- Active Question State -->
+            <div id="quiz-in-progress-state">
+              <div class="quiz-header">
+                <div>
+                  <div class="quiz-meta-tag" id="quiz-course-tag">Production Full-Stack Architecture</div>
+                  <h2 class="quiz-title" id="quiz-main-title">Knowledge Check & Practical Scenarios</h2>
+                </div>
+                <div class="quiz-progress-pill" id="quiz-step-counter">Question 1 of 4</div>
+              </div>
+
+              <div class="question-block">
+                <div class="question-prompt" id="quiz-question-text">
+                  What is the primary risk of relying on standard TTL expiration without probabilistic early recomputation (XFetch) under heavy traffic?
+                </div>
+                <div class="options-list" id="quiz-options-container">
+                  <!-- Dynamic options -->
+                </div>
+                <div class="quiz-feedback-box" id="quiz-feedback-display">
+                  <!-- Dynamic explanation -->
+                </div>
+              </div>
+
+              <div class="quiz-actions-row">
+                <button class="btn-secondary" id="btn-quiz-prev" disabled>&larr; Previous</button>
+                <div style="display:flex; gap:12px;">
+                  <button class="btn-secondary" id="btn-check-answer">Verify Answer</button>
+                  <button class="btn-primary" id="btn-quiz-next">Next Question &rarr;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quiz Result State -->
+            <div id="quiz-result-state" class="quiz-result-card">
+              <div class="quiz-score-badge" id="result-score-badge">🏆</div>
+              <h2 class="result-heading" id="result-heading-text">Outstanding Achievement!</h2>
+              <p class="result-sub" id="result-sub-text">You scored 100% on the backend architecture assessment.</p>
+              <div style="display:flex; justify-content:center; gap:16px;">
+                <button class="btn-secondary" id="btn-retry-quiz">Retake Assessment</button>
+                <button class="btn-primary" id="btn-claim-cert">Claim Verified Certificate &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW 4: VERIFIED CERTIFICATES ================= -->
+        <section id="certificates-view" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Verified Credentials & Mastery Diplomas</h2>
+              <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:4px;">
+                Tamper-proof certificates backed by verifiable hash seals. Ready to share or print for your portfolio.
+              </p>
+            </div>
+            <button class="btn-primary" id="btn-print-certificate">🖨️ Print / Save as PDF</button>
+          </div>
+
+          <div class="certificates-grid" id="certificates-display-container">
+            <!-- Populated dynamically via app.js -->
+          </div>
+        </section>
+
+        <!-- ================= VIEW 5: COURSE CATALOG / EXPLORER ================= -->
+        <section id="catalog-view" class="view-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Curated Masterclass Curriculum</h2>
+              <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:4px;">
+                Handcrafted by staff engineers and senior design leaders. No filler, pure production craft.
+              </p>
+            </div>
+            <button class="btn-primary" id="btn-open-add-course-modal">
+              <span>➕ Add Course</span>
+            </button>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="catalog-filters-bar">
+            <button class="filter-chip active" data-category="all">All Disciplines</button>
+            <button class="filter-chip" data-category="Engineering">Engineering & Scale</button>
+            <button class="filter-chip" data-category="Java">Java & Enterprise</button>
+            <button class="filter-chip" data-category="Python">Python & Systems</button>
+            <button class="filter-chip" data-category="Design & UX">Design & Motion UI</button>
+            <button class="filter-chip" data-category="AI & Data">AI Agents & RAG</button>
+          </div>
+
+          <div class="catalog-grid" id="catalog-courses-container">
+            <!-- Populated dynamically via app.js -->
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Course Modal Dialog -->
+  <div class="modal-overlay" id="add-course-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">✨ Add Masterclass Course</h3>
+          <p class="modal-subtitle">Publish a bespoke course directly into the VJ Institute curriculum</p>
+        </div>
+        <button class="modal-close-btn" id="btn-close-modal" title="Close">&times;</button>
+      </div>
+
+      <form id="add-course-form" class="modal-form">
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="new-course-title">Course Title *</label>
+            <input type="text" id="new-course-title" required placeholder="e.g. Python Skills: Core to Silk Profiling" class="form-input" value="Python Skills: High-Performance Architecture & Silk Profiling">
+          </div>
+          <div class="form-group">
+            <label for="new-course-category">Category *</label>
+            <select id="new-course-category" class="form-input" required>
+              <option value="Engineering" selected>Engineering & Scale</option>
+              <option value="Java">Java & Enterprise</option>
+              <option value="Python">Python & Systems</option>
+              <option value="Design & UX">Design & Motion UI</option>
+              <option value="AI & Data">AI Agents & RAG</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row three-col">
+          <div class="form-group">
+            <label for="new-course-level">Skill Level</label>
+            <select id="new-course-level" class="form-input">
+              <option value="Beginner to Intermediate">Beginner to Intermediate</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Intermediate to Advanced" selected>Intermediate to Advanced</option>
+              <option value="Advanced">Advanced / Master</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="new-course-duration">Estimated Duration</label>
+            <input type="text" id="new-course-duration" placeholder="e.g. 14h 30m" value="15h 45m" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="new-course-badge">Highlight Badge</label>
+            <input type="text" id="new-course-badge" placeholder="e.g. New, Bestseller, Essential" value="Bestseller" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="new-course-instructor">Instructor Name *</label>
+            <input type="text" id="new-course-instructor" required placeholder="e.g. Dr. Elena Rostova" class="form-input" value="Dr. Elena Rostova">
+          </div>
+          <div class="form-group">
+            <label for="new-course-role">Instructor Title & Bio</label>
+            <input type="text" id="new-course-role" placeholder="e.g. Staff Python Architect" class="form-input" value="Principal Python Architect & CPython Contributor">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="new-course-desc">Short Course Synopsis *</label>
+          <textarea id="new-course-desc" rows="2" required placeholder="Brief summary of what engineers will master..." class="form-input">Master high-performance Python 3.12+, async event loops, descriptor protocols, memory mechanics, and deep database & request bottleneck profiling with Django Silk and Py-Spy.</textarea>
+        </div>
+
+        <div class="form-divider">
+          <span>First Module & Lesson</span>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="new-course-module-title">Module Title</label>
+            <input type="text" id="new-course-module-title" value="Module 1: Advanced Python Internals & Profiling" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="new-course-lesson-title">Lesson Title</label>
+            <input type="text" id="new-course-lesson-title" value="1.1 Descriptors Protocol, Metaclasses & Python 3.12 Generics" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="new-course-code">Initial Production Code Snippet</label>
+          <textarea id="new-course-code" rows="4" placeholder="# Initial Python or system code snippet..." class="form-input font-mono"># Production Python Descriptor Protocol with 3.12+ Syntax
+from typing import Any
+
+class PositiveNumber:
+    """Descriptor enforcing strictly positive numeric values."""
+    def __set_name__(self, owner: type, name: str) -> None:
+        self.private_name = f"_{name}"
+
+    def __get__(self, instance: Any, owner: type | None = None) -> Any:
+        if instance is None:
+            return self
+        return getattr(instance, self.private_name, 0.0)
+
+    def __set__(self, instance: Any, value: float) -> None:
+        if not isinstance(value, (int, float)) or value <= 0:
+            raise ValueError(f"Attribute must be positive numeric, got: {value}")
+        setattr(instance, self.private_name, float(value))</textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn-primary">
+            <span>🚀 Publish Course to LMS</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- User Account & Profile Modal -->
+  <div class="modal-backdrop" id="user-profile-modal" style="display:none;">
+    <div class="modal-dialog" style="max-width: 520px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Fellowship Profile &amp; Account</h3>
+          <p class="modal-subtitle">Manage your session, active track, and credentials</p>
+        </div>
+        <button class="modal-close-btn" id="btn-close-profile-modal">&times;</button>
+      </div>
+
+      <div class="profile-modal-body" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Profile Identity Card -->
+        <div style="display: flex; align-items: center; gap: 16px; padding: 18px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" id="modal-user-avatar" alt="Avatar" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid var(--brand-primary); box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);">
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h4 id="modal-user-name" style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary); margin: 0;">Vijay Anand</h4>
+              <span id="modal-user-role-badge" style="font-size: 0.7rem; padding: 2px 8px; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); font-weight: 700;">Principal Fellow</span>
+            </div>
+            <p id="modal-user-email" style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px; font-family: var(--font-mono);">vijay.anand@vjinstitute.edu</p>
+            <p id="modal-user-track" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">Track: Distributed Systems &amp; Full-Stack Architecture</p>
+          </div>
+        </div>
+
+        <!-- Session Status & Quick Stats -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="padding: 14px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Session Status</div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--accent-emerald); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-emerald); display: inline-block;"></span>
+              <span>Authenticated</span>
+            </div>
+          </div>
+          <div style="padding: 14px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Member Since</div>
+            <div id="modal-user-since" style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 4px;">October 2026</div>
+          </div>
+        </div>
+
+        <!-- Account Actions -->
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
+          <a href="login.html" class="btn-secondary" style="justify-content: flex-start; text-decoration: none; padding: 12px 16px;">
+            <span>🔄 Switch User / Sign In with Another Account</span>
+          </a>
+          <a href="signup.html" class="btn-secondary" style="justify-content: flex-start; text-decoration: none; padding: 12px 16px;">
+            <span>✨ Create a New Fellow Account</span>
+          </a>
+          <button type="button" class="btn-secondary" id="btn-modal-logout" style="justify-content: flex-start; padding: 12px 16px; color: var(--accent-rose); border-color: rgba(244, 63, 94, 0.3);">
+            <span>🚪 Sign Out of Sanctuary</span>
+          </button>
+        </div>
+
+        <div class="modal-footer" style="margin-top: 8px;">
+          <button type="button" class="btn-primary" id="btn-close-profile-modal-footer" style="width: 100%;">
+            <span>Done</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Micro-interaction Toast Notice -->
+  <div class="toast-notice" id="toast-notification">
+    <span id="toast-icon">⚡</span>
+    <span id="toast-message">Progress saved successfully</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/courses-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

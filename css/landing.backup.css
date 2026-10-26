@@ -1,0 +1,1502 @@
+/* ==========================================================================
+   VJ Institute - Learn and Grow: Epic Master Landing Page Stylesheet
+   Inspired by the Wanderer's Mountain Vista (Golden Peak, Alpine Mist, Twilight Sky)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root {
+  /* Twilight Sky to Golden Sunburst Palette */
+  --land-canvas: #070913;
+  --land-surface: #0e1124;
+  --land-surface-elevated: #161a36;
+  --land-surface-glass: rgba(14, 17, 36, 0.72);
+  --land-card: rgba(18, 22, 46, 0.8);
+  --land-card-border: rgba(255, 255, 255, 0.1);
+
+  /* Sunset Gold & Amber Accents (from the sunlit mountain) */
+  --gold-primary: #fbbf24;
+  --gold-glow: #f59e0b;
+  --gold-deep: #d97706;
+  --gold-gradient: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #ea580c 100%);
+  --gold-glass: rgba(245, 158, 11, 0.15);
+
+  /* Twilight Violet & Cosmic Indigo (from the mountain sky) */
+  --twilight-violet: #8b5cf6;
+  --twilight-indigo: #6366f1;
+  --twilight-gradient: linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #4338ca 100%);
+
+  /* Alpine Lake & Glacier Blue (from the reflective water) */
+  --alpine-cyan: #38bdf8;
+  --alpine-sky: #0ea5e9;
+  --alpine-glow: rgba(56, 189, 248, 0.25);
+
+  /* Typography Colors */
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+  --text-gold: #fde68a;
+  --text-cyan: #bae6fd;
+  --text-muted: #64748b;
+
+  /* Typography Fonts */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-display: 'Cinzel', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Geometry & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --shadow-gold: 0 10px 30px -5px rgba(245, 158, 11, 0.4);
+  --shadow-cyan: 0 10px 30px -5px rgba(56, 189, 248, 0.35);
+  --shadow-card: 0 20px 45px -10px rgba(0, 0, 0, 0.7);
+
+  --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-heading);
+  background-color: var(--land-canvas);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.landing-body {
+  background-color: var(--land-canvas);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1. FLOATING NAVIGATION BAR
+   ========================================================================== */
+.landing-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 32px;
+  transition: all var(--transition-smooth);
+}
+
+.landing-nav-wrapper.scrolled {
+  padding: 10px 32px;
+}
+
+.landing-nav {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(10, 13, 30, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-crest {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+.brand-text-col {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  line-height: 1.1;
+}
+.brand-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.nav-links-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+.nav-link:hover {
+  color: #ffffff;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+  transition: width var(--transition-smooth);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-nav-ghost {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+.btn-nav-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.btn-nav-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient);
+  color: #0b0f19;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition-fast);
+}
+.btn-nav-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   2. EPIC HERO SECTION (The Mountain Pilgrimage) - Multi-Layered Visual Stage
+   ========================================================================== */
+.landing-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 32px 80px 32px;
+  overflow: hidden;
+  background-color: #070913;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Layer System: 3D Multi-Planar Depth Architecture */
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Background Layer: Deep 3D plane with slow depth parallax and camera drift */
+.hero-layer-back {
+  z-index: 1;
+  transform: translate3d(var(--bg-x, 0px), var(--bg-y, 0px), 0px) scale(1.06);
+  transform-origin: center bottom;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+  animation: heroCameraDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes heroCameraDrift {
+  0% {
+    transform: translate3d(var(--bg-x, 0px), var(--bg-y, 0px), 0px) scale(1.06);
+  }
+  100% {
+    transform: translate3d(calc(var(--bg-x, 0px) - 10px), calc(var(--bg-y, 0px) - 5px), 0px) scale(1.09);
+  }
+}
+
+.hero-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+
+/* Volumetric Sun Radiance Burst - Blooms directly behind mountain & wanderer */
+.hero-sun-burst {
+  position: absolute;
+  right: 14%;
+  top: 42%;
+  width: 520px;
+  height: 520px;
+  transform: translate(50%, -50%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.45) 0%, rgba(249, 115, 22, 0.25) 30%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(48px);
+  animation: sunRadiancePulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes sunRadiancePulse {
+  0% { transform: translate(50%, -50%) scale(0.95); opacity: 0.75; }
+  100% { transform: translate(50%, -50%) scale(1.12); opacity: 1; }
+}
+
+/* Volumetric Morning Mist rolling over the lake between background & foreground */
+.hero-mist-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0.85;
+}
+
+.mist-stream-1 {
+  position: absolute;
+  bottom: 14%;
+  left: -20%;
+  width: 140%;
+  height: 240px;
+  background: radial-gradient(ellipse at 50% 60%, rgba(254, 240, 138, 0.2) 0%, rgba(147, 197, 253, 0.14) 40%, transparent 75%);
+  filter: blur(40px);
+  animation: mistRoll 18s ease-in-out infinite alternate;
+}
+
+.mist-stream-2 {
+  position: absolute;
+  bottom: 24%;
+  right: -10%;
+  width: 120%;
+  height: 200px;
+  background: radial-gradient(ellipse at 65% 45%, rgba(251, 191, 36, 0.22) 0%, rgba(199, 210, 254, 0.12) 45%, transparent 70%);
+  filter: blur(45px);
+  animation: mistRollRev 24s ease-in-out infinite alternate;
+}
+
+@keyframes mistRoll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(45px, -18px, 0); }
+}
+
+@keyframes mistRollRev {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-40px, -12px, 0); }
+}
+
+/* Foreground Layer: Wanderer on Sunlit Grassy Hill (True 3D Spatial Front) */
+.hero-layer-front {
+  z-index: 3;
+  pointer-events: none;
+  transform: translate3d(var(--fg-x, 0px), var(--fg-y, 0px), 35px) 
+             rotateY(calc(var(--fg-x, 0px) * 0.12deg)) 
+             rotateX(calc(var(--fg-y, 0px) * -0.07deg));
+  transform-origin: 85% 75%;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0.2, 1);
+  /* Golden sunrise rim lighting + volumetric depth occlusion shadow */
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.32)) 
+          drop-shadow(-14px 14px 26px rgba(0, 0, 0, 0.48));
+}
+
+.hero-img-fg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  transform-origin: 85% 75%;
+  will-change: transform;
+  animation: wandererLivingBreath 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes wandererLivingBreath {
+  0% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.008) rotate(0.18deg);
+  }
+  100% {
+    transform: translateY(-7px) scale(1.014) rotate(-0.15deg);
+  }
+}
+
+/* Volumetric Morning Mist in Front of Grassy Hill & Wanderer's Boots */
+.hero-mist-front {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3.5;
+  overflow: hidden;
+}
+
+.mist-stream-foreground {
+  position: absolute;
+  bottom: 8%;
+  right: 4%;
+  width: 480px;
+  height: 150px;
+  background: radial-gradient(ellipse at 60% 50%, rgba(254, 240, 138, 0.18) 0%, rgba(199, 210, 254, 0.1) 45%, transparent 75%);
+  filter: blur(32px);
+  animation: mistFrontDrift 14s ease-in-out infinite alternate;
+}
+
+@keyframes mistFrontDrift {
+  0% { transform: translate3d(0, 0, 0); opacity: 0.65; }
+  100% { transform: translate3d(-30px, -8px, 0); opacity: 0.9; }
+}
+
+/* Ambient glow atmospheric mist layers - overlays both layers for seamless light integration */
+.hero-ambient-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: 
+    linear-gradient(180deg, rgba(7, 9, 19, 0.5) 0%, rgba(7, 9, 19, 0.12) 35%, rgba(7, 9, 19, 0.45) 75%, rgba(7, 9, 19, 0.96) 100%),
+    radial-gradient(circle at 78% 28%, rgba(251, 191, 36, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 18% 40%, rgba(99, 102, 241, 0.16) 0%, transparent 60%);
+}
+
+/* Dynamic floating particle field (embers / mountain mist) */
+.hero-particles-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  transform: translate3d(var(--particles-x, 0px), var(--particles-y, 0px), 0);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde68a 0%, rgba(245, 158, 11, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+  pointer-events: none;
+  opacity: 0;
+  animation: floatEmber linear infinite;
+}
+
+@keyframes floatEmber {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(var(--drift-x, -40px), -120px, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Bottom seamless fade to black transition into proof bar */
+.hero-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 6;
+  background: linear-gradient(to bottom, rgba(7, 9, 19, 0) 0%, rgba(7, 9, 19, 0.7) 50%, #070913 100%);
+}
+
+.hero-content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  transform: translate3d(var(--content-x, 0px), var(--content-y, 0px), 0);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.hero-text-block {
+  max-width: 740px;
+}
+
+.hero-pill-sacred {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 18px;
+  background: rgba(14, 18, 38, 0.8);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+  backdrop-filter: blur(12px);
+}
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 10px #fbbf24;
+  animation: pulseBeat 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeat {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.hero-headline {
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+  color: #ffffff;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
+}
+
+.headline-gold-gradient {
+  background: linear-gradient(135deg, #fef08a 0%, #fbbf24 45%, #f97316 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.headline-sky-gradient {
+  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 55%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient);
+  color: #0b0f19;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all var(--transition-fast);
+}
+.btn-hero-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(245, 158, 11, 0.7);
+}
+
+.btn-hero-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: var(--radius-full);
+  background: rgba(14, 18, 38, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--transition-fast);
+}
+.btn-hero-glass:hover {
+  background: rgba(30, 36, 68, 0.85);
+  border-color: var(--alpine-cyan);
+  color: var(--text-cyan);
+  transform: translateY(-2px);
+}
+
+.btn-hero-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  background: rgba(99, 102, 241, 0.18);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #c7d2fe;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: all var(--transition-fast);
+}
+.btn-hero-portal:hover {
+  background: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+  border-color: #818cf8;
+}
+
+/* Glassmorphic Live Card Overlay on Hero Right */
+.hero-card-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-glass-card {
+  background: rgba(12, 16, 36, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-xl);
+  padding: 26px 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-smooth);
+}
+.hero-glass-card:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.2);
+}
+
+.card-deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.card-deck-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--gold-primary);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.card-deck-status {
+  font-size: 0.76rem;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.status-dot-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+.card-deck-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.card-deck-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.mini-war-room-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(7, 10, 24, 0.6);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+}
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--alpine-cyan);
+}
+.metric-val.gold {
+  color: var(--gold-primary);
+}
+.metric-lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.card-deck-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-author-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold-primary);
+}
+.card-author-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.card-author-role {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.card-deck-btn {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+.card-deck-btn:hover {
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+/* Trust Proof Metrics Bar Below Hero */
+.hero-proof-bar {
+  max-width: 1280px;
+  margin: -40px auto 0 auto;
+  position: relative;
+  z-index: 20;
+  padding: 0 32px;
+}
+
+.proof-glass-strip {
+  background: rgba(14, 18, 38, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  padding: 24px 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 20px;
+}
+.proof-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.proof-icon {
+  font-size: 1.8rem;
+}
+.proof-number {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+.proof-label {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   3. THE WANDERER'S ASCENT (Visual 4-Stage Mountain Journey)
+   ========================================================================== */
+.section-wrapper {
+  padding: 100px 32px;
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header-centered {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px auto;
+}
+
+.section-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: var(--gold-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.section-main-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.section-desc-lead {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.pilgrimage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.pilgrim-card {
+  background: var(--land-surface);
+  border: 1px solid var(--land-card-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+.pilgrim-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(251, 191, 36, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.15);
+}
+
+.stage-number-watermark {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.stage-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+
+.stage-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.stage-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.stage-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.stage-topics-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.stage-topics-list li {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stage-topics-list li::before {
+  content: '▸';
+  color: var(--gold-primary);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   4. LIVE INTERACTIVE ARCHITECTURE BLUEPRINT (War-Room Lab Preview)
+   ========================================================================== */
+.blueprint-showcase-box {
+  background: linear-gradient(145deg, rgba(16, 20, 44, 0.85) 0%, rgba(9, 11, 24, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.blueprint-title-col h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+.blueprint-title-col p {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+}
+
+.blueprint-meta-strip {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+.meta-chip {
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-cyan);
+}
+
+/* Blueprint Interactive Nodes Grid */
+.blueprint-nodes-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.bp-node-card {
+  background: rgba(20, 26, 56, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+.bp-node-card:hover, .bp-node-card.active {
+  background: rgba(30, 40, 84, 0.85);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+  transform: translateY(-3px);
+}
+
+.node-icon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.node-icon {
+  font-size: 1.4rem;
+}
+.node-ping {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #34d399;
+  font-weight: 700;
+}
+
+.node-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+.node-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* Active Node Details Inspector */
+.blueprint-detail-inspector {
+  background: rgba(8, 11, 24, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.inspector-text h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  margin-bottom: 8px;
+}
+.inspector-text p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.inspector-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.inspect-stat {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.stat-digit {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.stat-legend {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. CURATED MASTERCLASSES SHOWCASE
+   ========================================================================== */
+.courses-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.landing-course-card {
+  background: var(--land-surface);
+  border: 1px solid var(--land-card-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.landing-course-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.2);
+}
+
+.course-card-thumb-wrap {
+  height: 200px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.course-card-thumb-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(14, 17, 36, 0.95) 100%);
+}
+
+.course-floating-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 5;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(10, 13, 28, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+.course-floating-pill.bestseller {
+  background: rgba(245, 158, 11, 0.9);
+  color: #0b0f19;
+  border: none;
+}
+
+.course-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course-card-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--alpine-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.course-card-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.course-card-summary {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.course-instructor-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.inst-avatar-round {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold-primary);
+}
+.inst-name {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.inst-role {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.course-card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+  margin-bottom: 18px;
+}
+.meta-rating {
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
+.btn-card-action {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+.btn-card-action:hover {
+  background: var(--gold-gradient);
+  color: #0b0f19;
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* ==========================================================================
+   6. FELLOWSHIP TESTIMONIALS & WALL OF LOVE
+   ========================================================================== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card-quote {
+  background: rgba(16, 20, 44, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+}
+.testimonial-card-quote:hover {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(22, 28, 60, 0.8);
+  transform: translateY(-4px);
+}
+
+.quote-stars-row {
+  color: var(--gold-primary);
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.quote-body-text {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.quote-author-deck {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.author-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-primary);
+}
+.author-name-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.author-role-text {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   7. GRAND SUMMIT BANNER & CLOSING CTA
+   ========================================================================== */
+.summit-call-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(99, 102, 241, 0.15) 100%),
+              radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.25) 0%, transparent 70%),
+              #0d1124;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 70px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 50px rgba(245, 158, 11, 0.15);
+}
+
+.summit-call-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.summit-call-subtitle {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  max-width: 680px;
+  margin: 0 auto 36px auto;
+  line-height: 1.7;
+}
+
+.summit-actions-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+.landing-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #05070e;
+  padding: 80px 32px 40px 32px;
+}
+
+.footer-inner-grid {
+  max-width: 1320px;
+  margin: 0 auto 60px auto;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 48px;
+}
+
+.footer-brand-col p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-nav-list a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color var(--transition-fast);
+}
+.footer-nav-list a:hover {
+  color: var(--gold-primary);
+}
+
+.footer-bottom-bar {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .pilgrimage-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .blueprint-nodes-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .proof-glass-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-links-menu {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .landing-hero-section {
+    padding: 120px 20px 60px 20px;
+    min-height: 90vh;
+  }
+  .hero-img-bg,
+  .hero-img-fg {
+    object-position: 72% bottom;
+  }
+  .hero-text-block {
+    max-width: 100%;
+    background: radial-gradient(circle at left center, rgba(7, 9, 19, 0.7) 0%, transparent 85%);
+    backdrop-filter: blur(4px);
+    padding: 18px 12px;
+    border-radius: 20px;
+  }
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+  .proof-glass-strip {
+    grid-template-columns: 1fr;
+  }
+  .proof-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+  }
+  .proof-item:last-child {
+    border-bottom: none;
+  }
+  .pilgrimage-grid {
+    grid-template-columns: 1fr;
+  }
+  .blueprint-nodes-row {
+    grid-template-columns: 1fr;
+  }
+  .blueprint-detail-inspector {
+    grid-template-columns: 1fr;
+  }
+  .footer-inner-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .summit-call-title {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-inner-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-hero-primary, .btn-hero-glass, .btn-hero-portal {
+    justify-content: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VJ Institute - Learn and Grow | Master Systems Architecture</title>
+  <meta name="description" content="Embark on the engineer's pilgrimage. Master distributed systems, high-throughput concurrency, and staff architecture from first principles.">
+  <link rel="icon" type="image/png" href="assets/images/vj-monogram.png">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing-body">
+
+  <!-- =========================================================================
+       1. FLOATING GLASS NAVBAR
+       ========================================================================= -->
+  <header class="landing-nav-wrapper" id="nav-wrapper">
+    <nav class="landing-nav">
+      <a href="landing.html" class="landing-brand" title="VJ Institute - Learn and Grow">
+        <img src="assets/images/vj-monogram.png" alt="VJ Institute Monogram" class="brand-crest">
+        <div class="brand-text-col">
+          <span class="brand-name">VJ INSTITUTE</span>
+          <span class="brand-sub">LEARN AND GROW</span>
+        </div>
+      </a>
+
+      <ul class="nav-links-menu">
+        <li><a href="#ascent" class="nav-link">The Ascent</a></li>
+        <li><a href="#blueprint" class="nav-link">War-Room Lab</a></li>
+        <li><a href="#masterclasses" class="nav-link">Curriculum</a></li>
+        <li><a href="#fellowship" class="nav-link">Testimonials</a></li>
+        <li><a href="#pricing" class="nav-link">Access Tiers</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-ghost">Sign In</a>
+        <a href="index.html" class="btn-nav-ghost" style="color: var(--alpine-cyan); border: 1px solid rgba(56, 189, 248, 0.3);">
+          <span>🏛️ Sanctuary App</span>
+        </a>
+        <a href="signup.html" class="btn-nav-primary">
+          <span>Start Free</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       2. EPIC HERO SECTION (The Mountain Pilgrimage)
+       ========================================================================= -->
+  <main>
+    <section class="landing-hero-section" id="hero-stage">
+      <!-- 1. Background Mountain & Sunrise Lake Layer -->
+      <div class="hero-layer hero-layer-back" aria-hidden="true">
+        <img src="assets/images/landing-hero-bg.jpg" alt="Sanctuary Mountain Peak at Sunrise" class="hero-img-bg" id="hero-bg-img" loading="eager" decoding="async">
+      </div>
+
+      <!-- 2. Sun Radiance Burst (behind the wanderer) -->
+      <div class="hero-sun-burst" aria-hidden="true"></div>
+
+      <!-- 2.5 Volumetric Morning Mist Streams rolling over the lake -->
+      <div class="hero-mist-canvas" aria-hidden="true">
+        <div class="mist-stream-1"></div>
+        <div class="mist-stream-2"></div>
+      </div>
+
+      <!-- 3. Front Foreground Layer (Wanderer with 3D Spatial Living Animation) -->
+      <div class="hero-layer hero-layer-front" aria-hidden="true">
+        <img src="assets/images/landing-hero-fg.png" alt="Wanderer on Grassy Hillside" class="hero-img-fg" id="hero-fg-img" loading="eager" decoding="async">
+      </div>
+
+      <!-- 3.5 Foreground Morning Mist Whispers (gentle haze in front of grassy hill) -->
+      <div class="hero-mist-front" aria-hidden="true">
+        <div class="mist-stream-foreground"></div>
+      </div>
+
+      <!-- 4. Unified Ambient Vignette & Floating Embers -->
+      <div class="hero-ambient-vignette" aria-hidden="true"></div>
+      <div class="hero-particles-field" id="hero-particles" aria-hidden="true"></div>
+
+      <!-- 5. Main Hero Content (Headline, Description, CTAs) -->
+      <div class="hero-content-container">
+        
+        <!-- Left Hero Text & Call to Action -->
+        <div class="hero-text-block">
+          <div class="hero-pill-sacred">
+            <span class="pulse-indicator"></span>
+            <span>⛩️ The Sacred Path to Technical Craftsmanship</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Ascend to Staff Engineer.<br>
+            From <span class="headline-gold-gradient">First Principles</span> to <span class="headline-sky-gradient">Global Scale</span>.
+          </h1>
+
+          <p class="hero-description">
+            Embark on the engineer's pilgrimage. Conquer low-latency concurrency, lock-free memory models, and distributed consensus through real production war-rooms guided by principal architects.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="signup.html" class="btn-hero-primary" id="btn-hero-signup">
+              <span>Begin Your Ascent Free</span>
+              <span>→</span>
+            </a>
+            <a href="#masterclasses" class="btn-hero-glass" id="btn-hero-curriculum">
+              <span>Explore Curriculum</span>
+              <span>▽</span>
+            </a>
+            <a href="index.html" class="btn-hero-portal" id="btn-hero-enter-lms">
+              <span>Enter Sanctuary LMS</span>
+              <span>⚡</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 6. Bottom Seamless Blend Vignette -->
+      <div class="hero-bottom-fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- Trust Proof Metrics Bar Below Hero -->
+    <section class="hero-proof-bar">
+      <div class="proof-glass-strip">
+        <div class="proof-item">
+          <span class="proof-icon">🏔️</span>
+          <div>
+            <div class="proof-number">12,800+</div>
+            <div class="proof-label">Engineers on the Ascent</div>
+          </div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">⚡</span>
+          <div>
+            <div class="proof-number">99.4%</div>
+            <div class="proof-label">Staff &amp; Lead Promotion Rate</div>
+          </div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">💎</span>
+          <div>
+            <div class="proof-number">Zero Fluff</div>
+            <div class="proof-label">100% Production Metal-to-Cloud</div>
+          </div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon">📜</span>
+          <div>
+            <div class="proof-number">Verified</div>
+            <div class="proof-label">Cryptographic Hash Diplomas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. THE WANDERER'S ASCENT (The 4-Stage Mountain Journey)
+         ========================================================================= -->
+    <section class="section-wrapper" id="ascent">
+      <div class="section-header-centered">
+        <div class="section-pill-tag">The 4-Stage Path</div>
+        <h2 class="section-main-title">The Engineer's Pilgrimage</h2>
+        <p class="section-desc-lead">
+          True system craftsmanship cannot be achieved by memorizing LeetCode questions. We forge architects through a methodical climb from machine memory to distributed global scale.
+        </p>
+      </div>
+
+      <div class="pilgrimage-grid">
+        
+        <!-- Stage 01 -->
+        <div class="pilgrim-card">
+          <span class="stage-number-watermark">01</span>
+          <div class="stage-badge">Stage I &bull; Foundations</div>
+          <div class="stage-icon">🌱</div>
+          <h3 class="stage-title">The Valley of Internals</h3>
+          <p class="stage-desc">
+            Understand exactly what happens between your code and the silicon. Memory allocators, cache lines, JVM/CPython bytecode, and system call overhead.
+          </p>
+          <ul class="stage-topics-list">
+            <li>CPU Cache Coherence (L1/L2/L3)</li>
+            <li>Memory Layout &amp; Struct Alignment</li>
+            <li>Kernel Syscalls &amp; epoll/kqueue IO</li>
+          </ul>
+        </div>
+
+        <!-- Stage 02 -->
+        <div class="pilgrim-card">
+          <span class="stage-number-watermark">02</span>
+          <div class="stage-badge">Stage II &bull; Concurrency</div>
+          <div class="stage-icon">⚡</div>
+          <h3 class="stage-title">The Concurrency Ridge</h3>
+          <p class="stage-desc">
+            Conquer multi-core parallelism without deadlock. Master compare-and-swap (CAS), lock-free ring buffers, memory barriers, and actor models.
+          </p>
+          <ul class="stage-topics-list">
+            <li>Lock-Free MPMC Ring Buffers</li>
+            <li>Deadlock Elimination &amp; Backoff</li>
+            <li>False Sharing &amp; Cache-Line Bouncing</li>
+          </ul>
+        </div>
+
+        <!-- Stage 03 -->
+        <div class="pilgrim-card">
+          <span class="stage-number-watermark">03</span>
+          <div class="stage-badge">Stage III &bull; Resilience</div>
+          <div class="stage-icon">🛡️</div>
+          <h3 class="stage-title">The Distributed Mountain</h3>
+          <p class="stage-desc">
+            Build systems that laugh at machine death and network failure. Raft consensus, write-ahead logs, idempotency keys, and multi-region replication.
+          </p>
+          <ul class="stage-topics-list">
+            <li>Raft &amp; Paxos Leader Election</li>
+            <li>Distributed Locks &amp; Redlock</li>
+            <li>Postgres WAL &amp; Sharding Architecture</li>
+          </ul>
+        </div>
+
+        <!-- Stage 04 -->
+        <div class="pilgrim-card">
+          <span class="stage-number-watermark">04</span>
+          <div class="stage-badge">Stage IV &bull; Leadership</div>
+          <div class="stage-icon">👑</div>
+          <h3 class="stage-title">The Summit of Architects</h3>
+          <p class="stage-desc">
+            Lead engineering organizations. Write battle-tested RFCs, decompose monoliths cleanly, architect disaster recovery, and inspire elite squads.
+          </p>
+          <ul class="stage-topics-list">
+            <li>Domain-Driven Service Boundaries</li>
+            <li>Disaster Recovery &amp; Split-Brain Drills</li>
+            <li>Executive Architecture Proposals</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. LIVE INTERACTIVE ARCHITECTURE BLUEPRINT (War-Room Lab Preview)
+         ========================================================================= -->
+    <section class="section-wrapper" id="blueprint">
+      <div class="blueprint-showcase-box">
+        
+        <div class="blueprint-header">
+          <div class="blueprint-title-col">
+            <div class="section-pill-tag">Hands-on Laboratory</div>
+            <h3>Interactive Distributed Architecture Blueprint</h3>
+            <p>Click any component node below to inspect production metrics, failure modes, and code blueprints.</p>
+          </div>
+          <div class="blueprint-meta-strip">
+            <span class="meta-chip">Topology: Active-Active Multi-AZ</span>
+            <span class="meta-chip" style="color:#34d399;">Throughput: 120,000 RPS</span>
+          </div>
+        </div>
+
+        <!-- Nodes Row -->
+        <div class="blueprint-nodes-row" id="blueprint-nodes">
+          
+          <div class="bp-node-card active" data-node="gateway">
+            <div class="node-icon-row">
+              <span class="node-icon">🚪</span>
+              <span class="node-ping">4.2ms</span>
+            </div>
+            <div class="node-title">Edge API Gateway</div>
+            <div class="node-subtitle">Token bucket rate limiter &amp; TLS terminator</div>
+          </div>
+
+          <div class="bp-node-card" data-node="cache">
+            <div class="node-icon-row">
+              <span class="node-icon">⚡</span>
+              <span class="node-ping">0.8ms</span>
+            </div>
+            <div class="node-title">Redis XFetch Layer</div>
+            <div class="node-subtitle">Probabilistic early recomputation cluster</div>
+          </div>
+
+          <div class="bp-node-card" data-node="stream">
+            <div class="node-icon-row">
+              <span class="node-icon">🌊</span>
+              <span class="node-ping">15ms</span>
+            </div>
+            <div class="node-title">Kafka Event Stream</div>
+            <div class="node-subtitle">Ordered partition bus with exactly-once sink</div>
+          </div>
+
+          <div class="bp-node-card" data-node="storage">
+            <div class="node-icon-row">
+              <span class="node-icon">🗄️</span>
+              <span class="node-ping">8.5ms</span>
+            </div>
+            <div class="node-title">PostgreSQL Primary</div>
+            <div class="node-subtitle">WAL synchronous replica with pg_stat monitoring</div>
+          </div>
+
+        </div>
+
+        <!-- Inspector Display Area -->
+        <div class="blueprint-detail-inspector" id="blueprint-inspector">
+          <div class="inspector-text">
+            <h4 id="inspect-title">Edge API Gateway &bull; Enforce Strict Rate-Limiting &amp; Authentication</h4>
+            <p id="inspect-desc">
+              Handles ingress TLS termination and distributes client requests across stateless worker instances. Employs token-bucket rate limiters in shared memory to protect downstream microservices from DDoS and scraping bursts.
+            </p>
+          </div>
+          <div class="inspector-stats-grid">
+            <div class="inspect-stat">
+              <div class="stat-digit" id="inspect-metric-1">4.2ms</div>
+              <div class="stat-legend">Transit Latency</div>
+            </div>
+            <div class="inspect-stat">
+              <div class="stat-digit" id="inspect-metric-2" style="color:var(--gold-primary);">120,000</div>
+              <div class="stat-legend">Req / Sec Capacity</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. CURATED MASTERCLASSES SHOWCASE
+         ========================================================================= -->
+    <section class="section-wrapper" id="masterclasses">
+      <div class="section-header-centered">
+        <div class="section-pill-tag">Rigorous Curriculum</div>
+        <h2 class="section-main-title">Masterclasses by Staff Engineers</h2>
+        <p class="section-desc-lead">
+          Zero simulated fluff. Every course comes with full production repositories, architectural diagrams, reproducible Docker sandboxes, and verification quizzes.
+        </p>
+      </div>
+
+      <div class="courses-showcase-grid">
+
+        <!-- Course 1 -->
+        <article class="landing-course-card">
+          <div class="course-card-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80');">
+            <span class="course-floating-pill bestseller">⭐ Bestseller</span>
+          </div>
+          <div class="course-card-body">
+            <span class="course-card-cat">Engineering &amp; Scale</span>
+            <h3 class="course-card-heading">Production Full-Stack Architecture: Zero to High Scale</h3>
+            <p class="course-card-summary">
+              Build resilient, distributed web systems using Node.js, PostgreSQL indexing, Redis caching, and Docker microservices.
+            </p>
+            <div class="course-instructor-row">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Arjun Mehta" class="inst-avatar-round">
+              <div>
+                <div class="inst-name">Arjun Mehta</div>
+                <div class="inst-role">Staff Infrastructure Fellow</div>
+              </div>
+            </div>
+            <div class="course-card-meta-row">
+              <span>⏱️ 14h 35m &bull; 18 Lessons</span>
+              <span class="meta-rating">★ 4.94 (382 reviews)</span>
+            </div>
+            <a href="index.html" class="btn-card-action">Open in Sanctuary LMS →</a>
+          </div>
+        </article>
+
+        <!-- Course 2 -->
+        <article class="landing-course-card">
+          <div class="course-card-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80');">
+            <span class="course-floating-pill">🐍 Advanced Systems</span>
+          </div>
+          <div class="course-card-body">
+            <span class="course-card-cat">Python Systems</span>
+            <h3 class="course-card-heading">Python Systems &amp; CPython Internals: From GIL to Bytecode</h3>
+            <p class="course-card-summary">
+              Master Python under the hood. Object memory models, garbage collector reference cycles, free-threading in Python 3.13, and writing C extensions.
+            </p>
+            <div class="course-instructor-row">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Dr. Elena Rostova" class="inst-avatar-round">
+              <div>
+                <div class="inst-name">Dr. Elena Rostova</div>
+                <div class="inst-role">CPython Core Contributor</div>
+              </div>
+            </div>
+            <div class="course-card-meta-row">
+              <span>⏱️ 12h 45m &bull; 16 Lessons</span>
+              <span class="meta-rating">★ 4.97 (420 reviews)</span>
+            </div>
+            <a href="index.html" class="btn-card-action">Open in Sanctuary LMS →</a>
+          </div>
+        </article>
+
+        <!-- Course 3 -->
+        <article class="landing-course-card">
+          <div class="course-card-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80');">
+            <span class="course-floating-pill bestseller">🔥 High Scale</span>
+          </div>
+          <div class="course-card-body">
+            <span class="course-card-cat">Concurrency &amp; Internals</span>
+            <h3 class="course-card-heading">High-Throughput Concurrency &amp; Lock-Free Data Structures</h3>
+            <p class="course-card-summary">
+              Architect ultra-low-latency queues, compare-and-swap algorithms, atomic operations, and memory barriers across modern multi-socket hardware.
+            </p>
+            <div class="course-instructor-row">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Elena &amp; Arjun" class="inst-avatar-round">
+              <div>
+                <div class="inst-name">Arjun Mehta &amp; Dr. Elena</div>
+                <div class="inst-role">Concurrency Research Group</div>
+              </div>
+            </div>
+            <div class="course-card-meta-row">
+              <span>⏱️ 16h 10m &bull; 20 Lessons</span>
+              <span class="meta-rating">★ 4.99 (610 reviews)</span>
+            </div>
+            <a href="index.html" class="btn-card-action">Open in Sanctuary LMS →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. FELLOWSHIP TESTIMONIALS
+         ========================================================================= -->
+    <section class="section-wrapper" id="fellowship">
+      <div class="section-header-centered">
+        <div class="section-pill-tag">Sanctuary Alumni</div>
+        <h2 class="section-main-title">Praise from Staff Engineers</h2>
+        <p class="section-desc-lead">
+          Engineers who made the ascent share how first-principles training reshaped their systems design and leadership trajectory.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-card-quote">
+          <div>
+            <div class="quote-stars-row">★★★★★</div>
+            <p class="quote-body-text">
+              "The module on PostgreSQL WAL internals and probabilistic caching was pure gold. We applied the XFetch algorithm to our payment gateway and wiped out 98% of our database stampedes overnight."
+            </p>
+          </div>
+          <div class="quote-author-deck">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="Vijay Anand" class="author-avatar-img">
+            <div>
+              <div class="author-name-text">Vijay Anand</div>
+              <div class="author-role-text">Principal Fellow &bull; Distributed Systems Track</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-quote">
+          <div>
+            <div class="quote-stars-row">★★★★★</div>
+            <p class="quote-body-text">
+              "Most tutorials show trivial examples that fall apart in real life. VJ Institute showed the messy truth of network partitions, distributed locks, and split-brain recovery. Essential for any senior dev."
+            </p>
+          </div>
+          <div class="quote-author-deck">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="Sarah Lin" class="author-avatar-img">
+            <div>
+              <div class="author-name-text">Sarah Lin</div>
+              <div class="author-role-text">Staff Engineer &bull; Cloud Infrastructure</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card-quote">
+          <div>
+            <div class="quote-stars-row">★★★★★</div>
+            <p class="quote-body-text">
+              "Elena's CPython internals masterclass gave me the depth I needed to contribute directly to the Python core and debug memory leaks in our 10M concurrent connections microservices."
+            </p>
+          </div>
+          <div class="quote-author-deck">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Marcus Sterling" class="author-avatar-img">
+            <div>
+              <div class="author-name-text">Marcus Sterling</div>
+              <div class="author-role-text">Lead Architect &bull; AI Infrastructure</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. FELLOWSHIP ACCESS TIERS (Pricing)
+         ========================================================================= -->
+    <section class="section-wrapper" id="pricing">
+      <div class="section-header-centered">
+        <div class="section-pill-tag">Investment in Mastery</div>
+        <h2 class="section-main-title">Transparent Fellowship Tiers</h2>
+        <p class="section-desc-lead">
+          Join individually or onboard your entire engineering squad with team architecture reviews.
+        </p>
+      </div>
+
+      <div class="pilgrimage-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px; margin: 0 auto;">
+        
+        <!-- Tier 1 -->
+        <div class="pilgrim-card">
+          <div class="stage-badge">Community Tier</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 6px;">Free</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">Forever open access</div>
+          <p class="stage-desc">
+            Explore open masterclass modules, track your study streak, and participate in community architecture reviews.
+          </p>
+          <ul class="stage-topics-list" style="margin-bottom: 24px;">
+            <li>Access to Introductory Lessons</li>
+            <li>Interactive Quizzes &amp; Self-Check</li>
+            <li>Daily Study Velocity Tracker</li>
+          </ul>
+          <a href="signup.html" class="btn-card-action">Create Free Account</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="pilgrim-card" style="border-color: rgba(251, 191, 36, 0.45); background: rgba(22, 28, 62, 0.9); box-shadow: 0 15px 40px rgba(245, 158, 11, 0.2);">
+          <div class="stage-badge" style="color: var(--gold-primary);">★ Most Popular &bull; Fellow Architect</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--gold-primary); margin-bottom: 6px;">$49 <span style="font-size: 1rem; color: var(--text-dim); font-weight: 400;">/ month</span></div>
+          <div style="font-size: 0.8rem; color: var(--text-gold); margin-bottom: 24px;">Full Masterclass Access</div>
+          <p class="stage-desc">
+            Complete curriculum, real war-room sandboxes, code repositories, and verifiable cryptographic credentials.
+          </p>
+          <ul class="stage-topics-list" style="margin-bottom: 24px;">
+            <li>All 6+ Production Masterclasses</li>
+            <li>Dockerized War-Room Sandboxes</li>
+            <li>Cryptographic Hash Diplomas</li>
+            <li>Direct Q&amp;A with Staff Instructors</li>
+          </ul>
+          <a href="signup.html" class="btn-hero-primary" style="justify-content: center; width: 100%; padding: 12px;">Ascend to Fellow</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pilgrim-card">
+          <div class="stage-badge">Enterprise Squad</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 6px;">Custom</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 24px;">For teams of 10+</div>
+          <p class="stage-desc">
+            Bespoke architecture audits, private war-rooms, custom internal masterclasses, and executive mentorship.
+          </p>
+          <ul class="stage-topics-list" style="margin-bottom: 24px;">
+            <li>Team Analytics &amp; Velocity Dashboard</li>
+            <li>Private Quarterly Architecture Reviews</li>
+            <li>Dedicated Slack Channel with Faculty</li>
+          </ul>
+          <a href="login.html" class="btn-card-action">Contact Faculty</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. FAQ ACCORDION
+         ========================================================================= -->
+    <section class="section-wrapper" id="faq">
+      <div class="section-header-centered">
+        <div class="section-pill-tag">Clear Answers</div>
+        <h2 class="section-main-title">Frequently Asked Questions</h2>
+        <p class="section-desc-lead">Everything you need to know about the curriculum, prerequisites, and credentials.</p>
+      </div>
+
+      <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;" id="faq-accordion">
+        
+        <details class="pilgrim-card" style="padding: 20px 24px; cursor: pointer;" open>
+          <summary style="font-size: 1.05rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>What makes VJ Institute different from generic coding bootcamps?</span>
+            <span style="color: var(--gold-primary); font-size: 1.2rem;">+</span>
+          </summary>
+          <p style="margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; line-height: 1.6;">
+            We focus exclusively on first principles and production-grade architecture. You won't find toy "todo apps" here. Instead, you'll analyze real flamegraphs, simulate PostgreSQL replication failovers, write lock-free memory ring buffers, and implement distributed consensus algorithms.
+          </p>
+        </details>
+
+        <details class="pilgrim-card" style="padding: 20px 24px; cursor: pointer;">
+          <summary style="font-size: 1.05rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>Are the certificates recognized by hiring teams?</span>
+            <span style="color: var(--gold-primary); font-size: 1.2rem;">+</span>
+          </summary>
+          <p style="margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; line-height: 1.6;">
+            Yes. Every credential issued by VJ Institute comes with an immutable cryptographic verification hash that can be independently verified by hiring managers, technical recruiters, and LinkedIn profiles.
+          </p>
+        </details>
+
+        <details class="pilgrim-card" style="padding: 20px 24px; cursor: pointer;">
+          <summary style="font-size: 1.05rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>Can I access the LMS Dashboard right now?</span>
+            <span style="color: var(--gold-primary); font-size: 1.2rem;">+</span>
+          </summary>
+          <p style="margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; line-height: 1.6;">
+            Yes! Click the <strong>"Enter Sanctuary LMS"</strong> button anywhere on this page, or go directly to <a href="index.html" style="color:var(--alpine-cyan); font-weight:700;">index.html</a>. You can also sign in with pre-seeded 1-click demo accounts on <a href="login.html" style="color:var(--gold-primary); font-weight:700;">login.html</a>.
+          </p>
+        </details>
+
+        <details class="pilgrim-card" style="padding: 20px 24px; cursor: pointer;">
+          <summary style="font-size: 1.05rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <span>What programming languages are covered?</span>
+            <span style="color: var(--gold-primary); font-size: 1.2rem;">+</span>
+          </summary>
+          <p style="margin-top: 14px; color: var(--text-dim); font-size: 0.92rem; line-height: 1.6;">
+            While architectural principles are language-agnostic, our concrete implementations use Python (CPython internals), Modern TypeScript/Node.js, Enterprise Java 21, and C/C++ memory mechanics.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. GRAND SUMMIT BANNER & CLOSING CTA
+         ========================================================================= -->
+    <section class="section-wrapper">
+      <div class="summit-call-banner">
+        <h2 class="summit-call-title">Your Summit Awaits.<br>Begin Your Ascent Today.</h2>
+        <p class="summit-call-subtitle">
+          Join over 12,000+ ambitious software architects mastering high-throughput distributed systems from first principles.
+        </p>
+        <div class="summit-actions-row">
+          <a href="signup.html" class="btn-hero-primary" style="padding: 16px 42px; font-size: 1.1rem;">
+            <span>Start Your Ascent Free →</span>
+          </a>
+          <a href="index.html" class="btn-hero-glass" style="padding: 16px 36px; font-size: 1.05rem;">
+            <span>Launch Sanctuary LMS 🏛️</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       10. RICH FOOTER
+       ========================================================================= -->
+  <footer class="landing-footer">
+    <div class="footer-inner-grid">
+      
+      <div class="footer-brand-col">
+        <a href="landing.html" class="landing-brand">
+          <img src="assets/images/vj-monogram.png" alt="VJ Monogram" class="brand-crest">
+          <div class="brand-text-col">
+            <span class="brand-name">VJ INSTITUTE</span>
+            <span class="brand-sub">LEARN AND GROW</span>
+          </div>
+        </a>
+        <p>
+          A premier sanctuary for engineering excellence, system internals, and staff architect masterclasses.
+        </p>
+        <div style="margin-top: 18px; font-size: 0.8rem; color: #34d399; display: flex; align-items: center; gap: 8px;">
+          <span class="status-dot-green"></span>
+          <span>All VJ Institute Distributed Nodes Operational</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Masterclasses</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Full-Stack Architecture</a></li>
+          <li><a href="index.html">Python &amp; CPython Internals</a></li>
+          <li><a href="index.html">Lock-Free Concurrency</a></li>
+          <li><a href="index.html">AI Agents &amp; RAG Pipelines</a></li>
+          <li><a href="index.html">Enterprise Java 21</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Sanctuary Portal</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Student Dashboard</a></li>
+          <li><a href="index.html">Active Video Player</a></li>
+          <li><a href="index.html">Assessment Quizzes</a></li>
+          <li><a href="index.html">Verified Diplomas</a></li>
+          <li><a href="login.html">Sign In / Switch User</a></li>
+          <li><a href="signup.html">Create Fellow Account</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Pilgrimage</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#ascent">The 4-Stage Path</a></li>
+          <li><a href="#blueprint">Interactive War-Room</a></li>
+          <li><a href="#fellowship">Alumni Testimonials</a></li>
+          <li><a href="#pricing">Fellowship Tiers</a></li>
+          <li><a href="#faq">Frequently Asked</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div>
+        &copy; 2026 VJ Institute &bull; Learn and Grow. Crafted with First Principles for elite architects worldwide.
+      </div>
+      <div style="display: flex; gap: 20px;">
+        <a href="javascript:void(0)" style="color:var(--text-muted); text-decoration:none;">Privacy Policy</a>
+        <a href="javascript:void(0)" style="color:var(--text-muted); text-decoration:none;">Honor Code</a>
+        <a href="javascript:void(0)" style="color:var(--text-muted); text-decoration:none;">System Architecture Status</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       11. VANILLA JS LOGIC
+       ========================================================================= -->
+  <script>
+    (function() {
+      'use strict';
+
+      // 1. Navbar Glass Blur On Scroll
+      const navWrapper = document.getElementById('nav-wrapper');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          navWrapper.classList.add('scrolled');
+        } else {
+          navWrapper.classList.remove('scrolled');
+        }
+      });
+
+      // 2. Blueprint Interactive Node Switcher
+      const blueprintData = {
+        gateway: {
+          title: 'Edge API Gateway • Enforce Strict Rate-Limiting & Authentication',
+          desc: 'Handles ingress TLS termination and distributes client requests across stateless worker instances. Employs token-bucket rate limiters in shared memory to protect downstream microservices from DDoS and scraping bursts.',
+          metric1: '4.2ms',
+          metric2: '120,000'
+        },
+        cache: {
+          title: 'Redis XFetch Layer • Probabilistic Early Expiration (Stochastic Cache)',
+          desc: 'Eliminates cache stampedes (dogpiling) under high concurrency. Workers compute cache misses in the background based on a stochastic probability threshold before keys expire, guaranteeing near-100% cache hits under load.',
+          metric1: '0.8ms',
+          metric2: '99.8%'
+        },
+        stream: {
+          title: 'Kafka Event Stream • Distributed Ordered Log Partitioning',
+          desc: 'High-throughput event streaming backbone. Enables asynchronous transaction processing, outbox patterns, and exactly-once delivery guarantees across distributed microservices with consumer lag tracking.',
+          metric1: '15ms',
+          metric2: '450k msg/s'
+        },
+        storage: {
+          title: 'PostgreSQL Primary • Write-Ahead Log (WAL) & Query EXPLAIN Optimization',
+          desc: 'ACID-compliant relational core with synchronous WAL streaming to zero-lag read replicas. Monitored with pg_stat_statements and automated B-Tree indexing strategies for sub-10ms analytic queries.',
+          metric1: '8.5ms',
+          metric2: '35,000 QPS'
+        }
+      };
+
+      const bpNodes = document.querySelectorAll('.bp-node-card');
+      const inspectTitle = document.getElementById('inspect-title');
+      const inspectDesc = document.getElementById('inspect-desc');
+      const inspectMetric1 = document.getElementById('inspect-metric-1');
+      const inspectMetric2 = document.getElementById('inspect-metric-2');
+
+      bpNodes.forEach(node => {
+        node.addEventListener('click', () => {
+          bpNodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+
+          const key = node.getAttribute('data-node');
+          const data = blueprintData[key];
+          if (data) {
+            inspectTitle.textContent = data.title;
+            inspectDesc.textContent = data.desc;
+            inspectMetric1.textContent = data.metric1;
+            inspectMetric2.textContent = data.metric2;
+          }
+        });
+      });
+
+      // 3. Mobile Navigation Toggle
+      const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
+      const navMenu = document.querySelector('.nav-links-menu');
+      if (mobileToggleBtn && navMenu) {
+        mobileToggleBtn.addEventListener('click', () => {
+          if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+          } else {
+            navMenu.style.display = 'flex';
+            navMenu.style.flexDirection = 'column';
+            navMenu.style.position = 'absolute';
+            navMenu.style.top = '70px';
+            navMenu.style.left = '20px';
+            navMenu.style.right = '20px';
+            navMenu.style.background = 'rgba(10, 13, 30, 0.95)';
+            navMenu.style.padding = '20px';
+            navMenu.style.borderRadius = '16px';
+            navMenu.style.border = '1px solid rgba(255, 255, 255, 0.15)';
+          }
+        });
+      }
+
+      // 4. Hero Visual Stage Multi-Layer Parallax & Atmospheric Embers
+      const heroStage = document.getElementById('hero-stage');
+      const heroParticles = document.getElementById('hero-particles');
+
+      // Create drifting golden ember particles
+      if (heroParticles) {
+        const particleCount = window.innerWidth < 768 ? 16 : 28;
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < particleCount; i++) {
+          const p = document.createElement('div');
+          p.className = 'hero-particle';
+          const size = Math.random() * 4 + 2; // 2px to 6px
+          const startLeft = Math.random() * 100; // 0% to 100%
+          const startTop = Math.random() * 70 + 20; // 20% to 90%
+          const duration = Math.random() * 6 + 6; // 6s to 12s
+          const delay = Math.random() * 6; // 0s to 6s
+          const driftX = (Math.random() - 0.5) * 80; // -40px to +40px
+
+          p.style.width = `${size}px`;
+          p.style.height = `${size}px`;
+          p.style.left = `${startLeft}%`;
+          p.style.top = `${startTop}%`;
+          p.style.setProperty('--drift-x', `${driftX}px`);
+          p.style.animationDuration = `${duration}s`;
+          p.style.animationDelay = `${delay}s`;
+
+          fragment.appendChild(p);
+        }
+        heroParticles.appendChild(fragment);
+      }
+
+      // Smooth interactive 3D perspective parallax with independent layer depth
+      if (heroStage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let mouseX = 0, mouseY = 0;
+        let currentBgX = 0, currentBgY = 0;
+        let currentFgX = 0, currentFgY = 0;
+        let currentContentX = 0, currentContentY = 0;
+        let currentParticlesX = 0, currentParticlesY = 0;
+        let isHovered = false;
+        let rafId = null;
+
+        const updateParallax = () => {
+          const ease = 0.08;
+          // Background moves slowly in reverse direction (simulating distant horizon)
+          currentBgX += (mouseX * -10 - currentBgX) * ease;
+          currentBgY += (mouseY * -6 - currentBgY) * ease;
+
+          // Foreground wanderer moves forward with 3D perspective separation
+          currentFgX += (mouseX * 18 - currentFgX) * ease;
+          currentFgY += (mouseY * 10 - currentFgY) * ease;
+
+          // Content moves at middle depth
+          currentContentX += (mouseX * 8 - currentContentX) * ease;
+          currentContentY += (mouseY * 5 - currentContentY) * ease;
+
+          // Particles drift dynamically
+          currentParticlesX += (mouseX * 24 - currentParticlesX) * ease;
+          currentParticlesY += (mouseY * 14 - currentParticlesY) * ease;
+
+          heroStage.style.setProperty('--bg-x', `${currentBgX.toFixed(2)}px`);
+          heroStage.style.setProperty('--bg-y', `${currentBgY.toFixed(2)}px`);
+          heroStage.style.setProperty('--fg-x', `${currentFgX.toFixed(2)}px`);
+          heroStage.style.setProperty('--fg-y', `${currentFgY.toFixed(2)}px`);
+          heroStage.style.setProperty('--content-x', `${currentContentX.toFixed(2)}px`);
+          heroStage.style.setProperty('--content-y', `${currentContentY.toFixed(2)}px`);
+          heroStage.style.setProperty('--particles-x', `${currentParticlesX.toFixed(2)}px`);
+          heroStage.style.setProperty('--particles-y', `${currentParticlesY.toFixed(2)}px`);
+
+          if (isHovered || Math.abs(currentBgX) > 0.05 || Math.abs(currentFgX) > 0.05) {
+            rafId = requestAnimationFrame(updateParallax);
+          } else {
+            rafId = null;
+          }
+        };
+
+        heroStage.addEventListener('mousemove', (e) => {
+          const rect = heroStage.getBoundingClientRect();
+          mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+          mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+          isHovered = true;
+          if (!rafId) rafId = requestAnimationFrame(updateParallax);
+        });
+
+        heroStage.addEventListener('mouseleave', () => {
+          mouseX = 0;
+          mouseY = 0;
+          isHovered = false;
+          if (!rafId) rafId = requestAnimationFrame(updateParallax);
+        });
+      }
+
+    })();
+  </script>
+</body>
+</html>

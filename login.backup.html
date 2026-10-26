@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | VJ Institute - Learn and Grow</title>
+  <meta name="description" content="Sign in to your VJ Institute account. Access hands-on distributed systems courses, video lessons, and verified engineering certifications.">
+  <link rel="icon" type="image/png" href="assets/images/vj-monogram.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+  <!-- Ambient Background Glows -->
+  <div class="auth-ambient-glow top-left"></div>
+  <div class="auth-ambient-glow bottom-right"></div>
+
+  <!-- Top Auth Header -->
+  <header class="auth-header">
+    <a href="landing.html" class="auth-brand-link" title="Return to VJ Institute Landing Page">
+      <img src="assets/images/vj-monogram.png" alt="VJ Monogram" class="auth-brand-logo">
+      <div class="auth-brand-text">
+        <span class="auth-brand-name">VJ INSTITUTE</span>
+        <span class="auth-brand-tagline">LEARN AND GROW</span>
+      </div>
+    </a>
+
+    <div class="auth-header-actions">
+      <!-- Dark/Light Theme Toggle -->
+      <button class="icon-button" id="theme-toggle-btn" title="Toggle Studio Light/Dark Theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+
+      <a href="landing.html" class="auth-back-btn" title="Return to Landing Page">
+        <span>← Home</span>
+      </a>
+      <a href="index.html" class="auth-back-btn" title="Open LMS Sanctuary">
+        <span>🏛️ Sanctuary LMS</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Auth Main Container -->
+  <main class="auth-main-wrapper">
+    <div class="auth-container">
+      
+      <!-- Left Column: Sanctuary Brand Showcase -->
+      <section class="auth-hero-showcase">
+        <div>
+          <div class="hero-pill-badge">
+            <span>🏛️</span>
+            <span>Sanctuary for Architects</span>
+          </div>
+          
+          <h1 class="hero-main-title">
+            Master engineering from <span class="hero-gradient-text">First Principles</span>.
+          </h1>
+
+          <p class="hero-lead-desc">
+            Welcome back to VJ Institute. Step into your focused workspace to tackle high-throughput distributed systems, lock-free concurrency, and battle-tested architecture.
+          </p>
+
+          <div class="hero-features-list">
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">⚡</div>
+              <div class="feature-text-block">
+                <h4>Velocity Sprint Tracking</h4>
+                <p>Maintain your daily streak and deep study hours without context switching.</p>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">💎</div>
+              <div class="feature-text-block">
+                <h4>Production Architecture Blueprints</h4>
+                <p>Curated by staff engineers and CPython contributors with production code.</p>
+              </div>
+            </div>
+
+            <div class="hero-feature-item">
+              <div class="feature-icon-badge">📜</div>
+              <div class="feature-text-block">
+                <h4>Verified Industry Credentials</h4>
+                <p>Earn cryptographic certificates verifiable by hiring teams worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor / Warrior Testimonial Strip -->
+        <div class="hero-testimonial-box">
+          <img src="assets/images/vj-warrior.png" alt="VJ Warrior" class="hero-warrior-img">
+          <div>
+            <div class="testimonial-quote">
+              "Code without understanding system internals is mere luck. Master the system from the metal up."
+            </div>
+            <div class="testimonial-author">
+              VJ Institute &bull; Learn and Grow Fellowship
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Login Form -->
+      <section class="auth-form-column">
+        <div class="auth-form-header">
+          <h2 class="auth-form-title">Sign In to Sanctuary</h2>
+          <p class="auth-form-subtitle">Enter your credentials or click any demo account below</p>
+        </div>
+
+        <!-- Mode Switcher -->
+        <div class="auth-mode-switch">
+          <a href="login.html" class="mode-tab-btn active">Sign In</a>
+          <a href="signup.html" class="mode-tab-btn">Create Account</a>
+        </div>
+
+        <!-- Quick Demo Accounts Selector (1-Click Fill) -->
+        <div class="demo-pill-group">
+          <div class="demo-group-label">
+            <span>⚡ 1-Click Demo Accounts</span>
+            <span style="font-weight: normal; opacity: 0.8;">Instant Fill</span>
+          </div>
+          <div class="demo-buttons-row">
+            <button type="button" class="demo-fill-btn" id="demo-btn-vijay" title="Sign in as Vijay Anand (Principal Fellow)">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" class="demo-avatar-mini" alt="Vijay">
+              <span>Vijay (Student)</span>
+            </button>
+            <button type="button" class="demo-fill-btn" id="demo-btn-elena" title="Sign in as Dr. Elena (Principal Architect)">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="demo-avatar-mini" alt="Elena">
+              <span>Dr. Elena (Faculty)</span>
+            </button>
+            <button type="button" class="demo-fill-btn" id="demo-btn-arjun" title="Sign in as Arjun Mehta (Staff Infra)">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="demo-avatar-mini" alt="Arjun">
+              <span>Arjun (Staff)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div class="auth-alert-banner" id="auth-alert">
+          <span id="alert-icon">⚠️</span>
+          <span id="alert-text">Alert message goes here</span>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" autocomplete="on">
+          <div class="auth-form-fields">
+            
+            <!-- Email Field -->
+            <div class="input-field-group">
+              <label class="input-field-label" for="login-email">Registered Email</label>
+              <div class="input-with-icon">
+                <span class="field-icon">✉️</span>
+                <input 
+                  type="email" 
+                  id="login-email" 
+                  class="auth-text-input" 
+                  placeholder="e.g. vijay.anand@vjinstitute.edu" 
+                  required 
+                  autocomplete="username"
+                  autofocus
+                >
+              </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-field-group">
+              <div class="input-field-label">
+                <label for="login-password">Password</label>
+                <a href="javascript:void(0)" class="forgot-link" id="btn-forgot-password">Forgot password?</a>
+              </div>
+              <div class="input-with-icon">
+                <span class="field-icon">🔒</span>
+                <input 
+                  type="password" 
+                  id="login-password" 
+                  class="auth-text-input" 
+                  placeholder="Enter your master password" 
+                  required
+                  autocomplete="current-password"
+                >
+                <button type="button" class="password-toggle-btn" id="toggle-password-btn" title="Toggle password visibility">
+                  👁️
+                </button>
+              </div>
+            </div>
+
+            <!-- Remember Me -->
+            <label class="auth-checkbox-row">
+              <input type="checkbox" id="remember-me" checked>
+              <span>Keep me logged in on this browser</span>
+            </label>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" id="btn-submit-login">
+              <span>Sign In to Sanctuary</span>
+              <span>→</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- SSO Options -->
+        <div class="auth-divider-line">
+          <span>Or Continue With</span>
+        </div>
+
+        <div class="sso-buttons-row">
+          <button type="button" class="btn-sso" id="btn-sso-github">
+            <span class="sso-icon">🐙</span>
+            <span>GitHub</span>
+          </button>
+          <button type="button" class="btn-sso" id="btn-sso-google">
+            <span class="sso-icon">🌐</span>
+            <span>Google SSO</span>
+          </button>
+        </div>
+
+        <!-- Bottom Switch Link -->
+        <div class="auth-bottom-switch">
+          Don't have an account yet? 
+          <a href="signup.html">Create one now →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-backdrop" id="forgot-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div class="modal-dialog" style="max-width:440px; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-xl); padding:28px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Reset Sanctuary Key</h3>
+          <p class="modal-subtitle">Enter your email to receive recovery instructions</p>
+        </div>
+        <button class="modal-close-btn" id="btn-close-forgot">&times;</button>
+      </div>
+      <form id="forgot-form" style="display:flex; flex-direction:column; gap:16px; margin-top:16px;">
+        <div class="form-group">
+          <label for="forgot-email">Account Email</label>
+          <input type="email" id="forgot-email" class="form-input" placeholder="vijay.anand@vjinstitute.edu" required>
+        </div>
+        <div class="modal-footer" style="padding-top:14px; margin-top:10px;">
+          <button type="button" class="btn-secondary" id="btn-cancel-forgot">Cancel</button>
+          <button type="submit" class="btn-primary">
+            <span>Send Reset Instructions</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      const emailInput = document.getElementById('login-email');
+      const passInput = document.getElementById('login-password');
+      const togglePassBtn = document.getElementById('toggle-password-btn');
+      const loginForm = document.getElementById('login-form');
+      const rememberCheckbox = document.getElementById('remember-me');
+      const alertBanner = document.getElementById('auth-alert');
+      const alertText = document.getElementById('alert-text');
+      const alertIcon = document.getElementById('alert-icon');
+      const submitBtn = document.getElementById('btn-submit-login');
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      const themeIcon = document.getElementById('theme-icon');
+
+      // Theme toggle sync
+      function updateThemeIcon() {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        themeIcon.textContent = current === 'dark' ? '🌙' : '☀️';
+      }
+      updateThemeIcon();
+
+      themeBtn.addEventListener('click', () => {
+        VJAuth.toggleTheme();
+        updateThemeIcon();
+      });
+
+      // Show/Hide password toggle
+      togglePassBtn.addEventListener('click', () => {
+        if (passInput.type === 'password') {
+          passInput.type = 'text';
+          togglePassBtn.textContent = '🔒';
+          togglePassBtn.title = 'Hide password';
+        } else {
+          passInput.type = 'password';
+          togglePassBtn.textContent = '👁️';
+          togglePassBtn.title = 'Show password';
+        }
+      });
+
+      // Restore remembered email if available
+      try {
+        const remembered = localStorage.getItem('vj_lms_remember_email');
+        if (remembered) {
+          emailInput.value = remembered;
+          passInput.focus();
+        }
+      } catch (e) {}
+
+      // Notification helper
+      function showAlert(msg, isSuccess = false) {
+        alertBanner.className = 'auth-alert-banner ' + (isSuccess ? 'success' : 'error');
+        alertIcon.textContent = isSuccess ? '✅' : '⚠️';
+        alertText.textContent = msg;
+        alertBanner.style.display = 'flex';
+      }
+
+      function hideAlert() {
+        alertBanner.style.display = 'none';
+      }
+
+      // Demo login fill buttons
+      document.getElementById('demo-btn-vijay').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Vijay Anand (Principal Fellow) credentials. Click Sign In to enter.', true);
+      });
+
+      document.getElementById('demo-btn-elena').addEventListener('click', () => {
+        emailInput.value = 'elena.rostova@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Dr. Elena Rostova (Faculty) credentials. Click Sign In to enter.', true);
+      });
+
+      document.getElementById('demo-btn-arjun').addEventListener('click', () => {
+        emailInput.value = 'arjun.mehta@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Arjun Mehta (Staff Infra) credentials. Click Sign In to enter.', true);
+      });
+
+      // Mock SSO buttons
+      document.getElementById('btn-sso-github').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Connecting to GitHub SSO... Authenticated as Vijay Anand!', true);
+        setTimeout(() => {
+          submitBtn.click();
+        }, 600);
+      });
+
+      document.getElementById('btn-sso-google').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Connecting to Google Enterprise Workspace... Authenticated!', true);
+        setTimeout(() => {
+          submitBtn.click();
+        }, 600);
+      });
+
+      // Form submission
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        hideAlert();
+
+        const email = emailInput.value;
+        const pass = passInput.value;
+        const remember = rememberCheckbox.checked;
+
+        submitBtn.classList.add('loading');
+        submitBtn.innerHTML = `<span>Validating credentials...</span> <span style="display:inline-block; animation:spin 1s linear infinite;">⏳</span>`;
+
+        setTimeout(() => {
+          const res = VJAuth.login(email, pass, remember);
+
+          if (!res.success) {
+            submitBtn.classList.remove('loading');
+            submitBtn.innerHTML = `<span>Sign In to Sanctuary</span> <span>→</span>`;
+            showAlert(res.error, false);
+            passInput.focus();
+          } else {
+            showAlert(`Welcome back, ${res.user.name}! Redirecting to LMS Sanctuary...`, true);
+            submitBtn.innerHTML = `<span>Signed in as ${res.user.name}</span> <span>✓</span>`;
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 750);
+          }
+        }, 400);
+      });
+
+      // Forgot Password Modal
+      const forgotModal = document.getElementById('forgot-modal');
+      const btnForgot = document.getElementById('btn-forgot-password');
+      const btnCloseForgot = document.getElementById('btn-close-forgot');
+      const btnCancelForgot = document.getElementById('btn-cancel-forgot');
+      const forgotForm = document.getElementById('forgot-form');
+
+      btnForgot.addEventListener('click', () => {
+        forgotModal.style.display = 'flex';
+        document.getElementById('forgot-email').value = emailInput.value || 'vijay.anand@vjinstitute.edu';
+      });
+
+      function closeForgot() {
+        forgotModal.style.display = 'none';
+      }
+
+      btnCloseForgot.addEventListener('click', closeForgot);
+      btnCancelForgot.addEventListener('click', closeForgot);
+
+      forgotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fEmail = document.getElementById('forgot-email').value;
+        closeForgot();
+        showAlert(`Password reset link and temporary key sent to ${fEmail}. Default password is: password123`, true);
+      });
+
+    })();
+  </script>
+</body>
+</html>

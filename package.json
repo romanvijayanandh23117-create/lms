@@ -1,0 +1,17 @@
+{
+  "name": "vj-institute-lms",
+  "version": "1.0.0",
+  "description": "VJ Institute - Learn and Grow LMS",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "lms",
+    "vj-institute",
+    "education"
+  ],
+  "author": "",
+  "license": "ISC"
+}

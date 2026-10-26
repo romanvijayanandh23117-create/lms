@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in to your Account | VJ Institute</title>
+  <meta name="description" content="Log in to your VJ Institute account. Access your customizable dashboard, courses, and interactive lessons.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/vj-institute-logo.svg">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-split-body">
+
+  <!-- Top Navigation Helper Bar -->
+  <header class="auth-top-bar">
+    <a href="landing.html" class="back-home-link" title="Return to Landing Page">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Back to Home</span>
+    </a>
+    <a href="index.html" class="auth-badge-sanctuary">
+      <span>🏛️ Enter LMS Dashboard</span>
+    </a>
+  </header>
+
+  <!-- Main Split Card Container -->
+  <main class="auth-split-card">
+
+    <!-- LEFT COLUMN: LOGIN FORM -->
+    <section class="auth-form-panel">
+      
+      <!-- Brand Logo -->
+      <a href="landing.html" class="auth-brand-row">
+        <div class="brand-icon-wrap">
+          <img src="assets/images/vj-institute-logo.svg" alt="VJ Institute Logo" style="width: 32px; height: 32px; border-radius: 8px;">
+        </div>
+        <span class="brand-title-text">VJ Institute</span>
+      </a>
+
+      <!-- Headline -->
+      <h1 class="auth-title">Log in to your Account</h1>
+      <p class="auth-subtitle">Welcome back! Select method to log in:</p>
+
+      <!-- Social Logins (Google & Facebook) -->
+      <div class="social-buttons-row">
+        <button type="button" class="btn-social" id="btn-social-google">
+          <!-- Google G Icon -->
+          <svg viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/>
+          </svg>
+          <span>Google</span>
+        </button>
+
+        <button type="button" class="btn-social" id="btn-social-facebook">
+          <!-- Facebook F Icon -->
+          <svg viewBox="0 0 24 24" fill="#1877F2">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span>Facebook</span>
+        </button>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="auth-divider">
+        <span>or continue with email</span>
+      </div>
+
+      <!-- Alert Notification Banner -->
+      <div class="auth-alert-box" id="auth-alert">
+        <span id="alert-icon">⚠️</span>
+        <span id="alert-text">Notification message</span>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form">
+        <div class="form-inputs-stack">
+          
+          <!-- Email Input -->
+          <div class="input-icon-field">
+            <span class="field-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </span>
+            <input 
+              type="email" 
+              id="login-email" 
+              class="auth-input" 
+              placeholder="Email" 
+              required
+              autocomplete="email"
+              autofocus
+            >
+          </div>
+
+          <!-- Password Input -->
+          <div class="input-icon-field">
+            <span class="field-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input 
+              type="password" 
+              id="login-password" 
+              class="auth-input" 
+              placeholder="Password" 
+              required
+              autocomplete="current-password"
+            >
+            <button type="button" class="toggle-pass-btn" id="toggle-password-btn" aria-label="Toggle password view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Forgot Password -->
+          <div class="forgot-pass-wrap">
+            <a href="javascript:void(0)" class="forgot-pass-link" id="btn-forgot-password">Forgot Password</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-auth-submit" id="btn-submit-login">
+            <span>Submit</span>
+          </button>
+
+        </div>
+      </form>
+
+      <!-- Switch to Sign Up -->
+      <div class="auth-switch-text">
+        Don't have an account? <a href="signup.html">Create a account</a>
+      </div>
+
+      <!-- Quick 1-Click Demo Fill -->
+      <div class="demo-accounts-strip">
+        <span class="demo-strip-label">⚡ 1-Click Demo:</span>
+        <div class="demo-chips-group">
+          <button type="button" class="demo-chip-btn" id="demo-btn-vijay">Vijay (Student)</button>
+          <button type="button" class="demo-chip-btn" id="demo-btn-elena">Elena (Faculty)</button>
+          <button type="button" class="demo-chip-btn" id="demo-btn-arjun">Arjun (Staff)</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: SOLID BLUE SHOWCASE PANEL -->
+    <section class="auth-showcase-panel" aria-label="Dashboard Integration Showcase">
+      
+      <!-- Top Spacer / Subtitle -->
+      <div style="height: 10px;"></div>
+
+      <!-- Graphic Stage with Circles, Connected Badges and Mockup Card -->
+      <div class="showcase-graphic-stage">
+        
+        <!-- Concentric Translucent Circles -->
+        <div class="glow-circle-outer"></div>
+        <div class="glow-circle-inner"></div>
+
+        <!-- Branching Connector Cables (SVG) -->
+        <svg class="app-connectors-svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Top branch from Slack to trunk -->
+          <path d="M 115 75 C 150 75, 170 140, 205 140" stroke="#0050d0" stroke-width="7" stroke-linecap="round"/>
+          <path d="M 115 75 C 150 75, 170 140, 205 140" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Middle branch from Gallery to trunk -->
+          <path d="M 80 140 L 205 140" stroke="#0050d0" stroke-width="7" stroke-linecap="round"/>
+          <path d="M 80 140 L 205 140" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Bottom branch from Google to trunk -->
+          <path d="M 115 205 C 150 205, 170 140, 205 140" stroke="#0050d0" stroke-width="7" stroke-linecap="round"/>
+          <path d="M 115 205 C 150 205, 170 140, 205 140" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Floating Badge 1: Slack (Top) -->
+        <div class="floating-app-badge badge-slack">
+          <!-- Slack Hash Logo -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M6 15a2 2 0 1 1-2-2h2v2zm1 0a2 2 0 1 1 2 2v-2H7zm0-3a2 2 0 1 1-2-2 2 2 0 0 1 2 2v0zm0-1a2 2 0 1 1 2-2v2H7z" fill="#E01E5A"/>
+            <path d="M9 6a2 2 0 1 1 2-2v2H9zm0 1a2 2 0 1 1-2 2H9V7zm3 0a2 2 0 1 1 2-2 2 2 0 0 1-2 2v0zm1 0a2 2 0 1 1-2 2h2V7z" fill="#36C5F0"/>
+            <path d="M18 9a2 2 0 1 1 2 2h-2V9zm-1 0a2 2 0 1 1-2-2v2h2zm0 3a2 2 0 1 1 2 2 2 2 0 0 1-2-2v0zm0 1a2 2 0 1 1-2 2v-2h2z" fill="#2EB67D"/>
+            <path d="M15 18a2 2 0 1 1-2 2v-2h2zm0-1a2 2 0 1 1 2-2h-2v2zm-3 0a2 2 0 1 1-2 2 2 2 0 0 1 2-2v0zm-1 0a2 2 0 1 1 2-2h-2v2z" fill="#ECB22E"/>
+          </svg>
+        </div>
+
+        <!-- Floating Badge 2: Gallery/Photo (Middle Left) -->
+        <div class="floating-app-badge badge-gallery">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0062FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+
+        <!-- Floating Badge 3: Google (Bottom Left) -->
+        <div class="floating-app-badge badge-google">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/>
+          </svg>
+        </div>
+
+        <!-- Floating White Dashboard Tablet Mockup -->
+        <div class="dashboard-mockup-card">
+          <!-- 3 Colored Header Dots -->
+          <div class="mockup-header-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Top Search / Subheader Pill -->
+          <div class="mockup-search-pill"></div>
+
+          <!-- Skeleton List Rows -->
+          <div class="mockup-skeleton-lines">
+            <div class="mockup-item-row">
+              <span class="mockup-avatar-dot"></span>
+              <span class="mockup-text-bar" style="width: 75%;"></span>
+            </div>
+            <div class="mockup-item-row">
+              <span class="mockup-avatar-dot"></span>
+              <span class="mockup-text-bar" style="width: 90%;"></span>
+            </div>
+            <div class="mockup-item-row">
+              <span class="mockup-avatar-dot"></span>
+              <span class="mockup-text-bar" style="width: 60%;"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Headline, Subtitle & Pagination Dots -->
+      <div class="showcase-text-block">
+        <h3 class="showcase-headline">Complete your application</h3>
+        <p class="showcase-subtext">Everything you need in an easily customizable dashboard</p>
+        
+        <!-- 3 Pagination Dots -->
+        <div class="showcase-dots-row">
+          <span class="showcase-dot active"></span>
+          <span class="showcase-dot"></span>
+          <span class="showcase-dot"></span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-backdrop" id="forgot-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:999; align-items:center; justify-content:center; padding:20px;">
+    <div style="max-width:420px; width:100%; background:#ffffff; border-radius:18px; padding:28px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+        <div>
+          <h3 style="font-size:1.25rem; font-weight:700; color:#111827;">Reset Password</h3>
+          <p style="font-size:0.86rem; color:#6b7280; margin-top:4px;">Enter your email to receive recovery instructions</p>
+        </div>
+        <button id="btn-close-forgot" style="background:none; border:none; font-size:1.5rem; color:#9ca3af; cursor:pointer;">&times;</button>
+      </div>
+      <form id="forgot-form" style="display:flex; flex-direction:column; gap:14px;">
+        <input type="email" id="forgot-email" class="auth-input" style="padding-left:14px;" placeholder="name@example.com" required>
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button type="button" id="btn-cancel-forgot" style="padding:10px 18px; background:#f3f4f6; border:none; border-radius:8px; font-weight:600; cursor:pointer; color:#4b5563;">Cancel</button>
+          <button type="submit" style="padding:10px 18px; background:#0062ff; color:#ffffff; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Send Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Authentication Logic Script -->
+  <script src="js/auth.js"></script>
+  <script>
+    (function() {
+      const emailInput = document.getElementById('login-email');
+      const passInput = document.getElementById('login-password');
+      const submitBtn = document.getElementById('btn-submit-login');
+      const loginForm = document.getElementById('login-form');
+      const togglePassBtn = document.getElementById('toggle-password-btn');
+      const alertBox = document.getElementById('auth-alert');
+      const alertIcon = document.getElementById('alert-icon');
+      const alertText = document.getElementById('alert-text');
+
+      // Toggle password visibility
+      togglePassBtn.addEventListener('click', () => {
+        if (passInput.type === 'password') {
+          passInput.type = 'text';
+          togglePassBtn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+            </svg>
+          `;
+        } else {
+          passInput.type = 'password';
+          togglePassBtn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          `;
+        }
+      });
+
+      function showAlert(msg, isSuccess = false) {
+        alertBox.className = 'auth-alert-box ' + (isSuccess ? 'success' : 'error');
+        alertIcon.textContent = isSuccess ? '✅' : '⚠️';
+        alertText.textContent = msg;
+        alertBox.style.display = 'flex';
+      }
+
+      function hideAlert() {
+        alertBox.style.display = 'none';
+      }
+
+      // Demo 1-Click Fill Buttons
+      document.getElementById('demo-btn-vijay').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Vijay Anand (Student) credentials. Click Submit to enter.', true);
+      });
+
+      document.getElementById('demo-btn-elena').addEventListener('click', () => {
+        emailInput.value = 'elena.rostova@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Dr. Elena (Faculty) credentials. Click Submit to enter.', true);
+      });
+
+      document.getElementById('demo-btn-arjun').addEventListener('click', () => {
+        emailInput.value = 'arjun.mehta@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Filled Arjun Mehta (Staff) credentials. Click Submit to enter.', true);
+      });
+
+      // Social buttons mock instant fill
+      document.getElementById('btn-social-google').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Connected to Google SSO! Click Submit to enter.', true);
+      });
+
+      document.getElementById('btn-social-facebook').addEventListener('click', () => {
+        emailInput.value = 'vijay.anand@vjinstitute.edu';
+        passInput.value = 'password123';
+        showAlert('Connected to Facebook SSO! Click Submit to enter.', true);
+      });
+
+      // Form submission
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        hideAlert();
+
+        const email = emailInput.value.trim();
+        const pass = passInput.value;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Signing in...</span>`;
+
+        setTimeout(() => {
+          const res = VJAuth.login(email, pass, true);
+
+          if (!res.success) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Submit</span>`;
+            showAlert(res.error, false);
+            passInput.focus();
+          } else {
+            showAlert(`Welcome back, ${res.user.name}! Redirecting to LMS...`, true);
+            submitBtn.innerHTML = `<span>Signed in as ${res.user.name} ✓</span>`;
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 600);
+          }
+        }, 350);
+      });
+
+      // Forgot Password Modal
+      const forgotModal = document.getElementById('forgot-modal');
+      const btnForgot = document.getElementById('btn-forgot-password');
+      const btnCloseForgot = document.getElementById('btn-close-forgot');
+      const btnCancelForgot = document.getElementById('btn-cancel-forgot');
+      const forgotForm = document.getElementById('forgot-form');
+
+      btnForgot.addEventListener('click', () => {
+        forgotModal.style.display = 'flex';
+        document.getElementById('forgot-email').value = emailInput.value || '';
+      });
+
+      function closeForgot() {
+        forgotModal.style.display = 'none';
+      }
+
+      btnCloseForgot.addEventListener('click', closeForgot);
+      btnCancelForgot.addEventListener('click', closeForgot);
+
+      forgotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fEmail = document.getElementById('forgot-email').value;
+        closeForgot();
+        showAlert(`Password reset instructions sent to ${fEmail}. Default password is: password123`, true);
+      });
+
+    })();
+  </script>
+</body>
+</html>
